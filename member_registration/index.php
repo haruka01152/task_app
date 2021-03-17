@@ -2,6 +2,8 @@
 session_start();
 session_regenerate_id(true);
 
+require_once '../common/dbconnect.php';
+
 if(!empty($_POST)){
     //空欄の場合エラー
     if ($_POST['userID'] === '') {
@@ -18,6 +20,17 @@ if(!empty($_POST)){
     //15文字より長い場合エラー
     if(strlen($_POST['password']) > 15){
         $error['password'] = 'length';
+    }
+
+    //アカウントの重複をチェック
+    if(empty($error)){
+        $member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE user_id=?');
+        $member->execute(array($_POST['userID']));
+        $record = $member->fetch();
+
+        if($record['cnt'] > 0){
+            $error['userID'] = 'duplicate';
+        }
     }
 
     //エラーが起きていなければポストの値をセッションに渡して確認画面に進む
@@ -73,6 +86,9 @@ if($_REQUEST['action'] === 'rewrite'){
                             <?php if ($error['userID'] === 'length') : ?>
                                 <p class="error">* ユーザーIDは15文字以下の英数字で入力してください</p>
                             <?php endif; ?>
+                            <?php if ($error['userID'] === 'duplicate') : ?>
+                                <p class="error">* このユーザーIDはすでに登録されています</p>
+                            <?php endif; ?>
                         </div>
                         <div class="inputs password">
                             <label for="password">パスワード</label>
@@ -85,6 +101,7 @@ if($_REQUEST['action'] === 'rewrite'){
                             <?php endif; ?>
                         </div>
                         <input type="submit" id="submit_button" value="登録">
+                        <a id="goto_login_button" href="../login/index.php">アカウントをお持ちの方はこちら</a>
                     </div>
                 </form>
             </div>

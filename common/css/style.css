@@ -1,5 +1,5 @@
 .error {
-  padding-top: 5px;
+  padding-top: 10px;
   color: red;
   font-size: 14px;
 }
@@ -18,10 +18,13 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-header .container .header-logo img {
-  width: 150px;
+header .container .logout_button {
+  padding-right: 20px;
 }
 
 main {
@@ -109,6 +112,10 @@ main .container .inputarea form .input_group #submit_button {
   margin-top: 30px;
   width: 50%;
   padding: 5px 0;
+}
+
+main .container .inputarea form .input_group #goto_login_button, main .container .inputarea form .input_group #goto_register_button {
+  margin-top: 30px;
 }
 
 main .container .inputarea .display_areas {

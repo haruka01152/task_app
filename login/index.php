@@ -2,6 +2,8 @@
 session_start();
 session_regenerate_id(true);
 
+require_once '../common/dbconnect.php';
+
 if(!empty($_POST)){
     //空欄の場合エラー
     if ($_POST['userID'] === '') {
@@ -12,12 +14,25 @@ if(!empty($_POST)){
         $error['password'] = 'blank';
     }
 
-    //エラーが起きていなければポストの値をセッションに渡して確認画面に進む
+    //すべて入力していたらアカウントがあるかをチェック
     if(empty($error)){
-        $_SESSION['join'] = $_POST;
+        $login = $db->prepare('SELECT * FROM members WHERE user_id=? AND password=?');
+        $login->execute(array(
+            $_POST['userID'],
+            sha1($_POST['password'])
+        ));
+        $member = $login->fetch();
 
-        header('Location: ../main/index.php');
-        exit();
+        //一致するアカウントが見つかればID情報をセッションに渡してメイン画面へ飛ぶ
+        if($member){
+            $_SESSION['id'] = $member['id'];
+
+            header('Location: ../main/index.php');
+            exit();
+        }else{
+            //一致しなければログインエラーを出す
+            $error['login'] = 'out';
+        }
     }
 }
 
@@ -65,7 +80,11 @@ if(!empty($_POST)){
                                 <p class="error">* パスワードを入力してください</p>
                             <?php endif; ?>
                         </div>
+                        <?php if($error['login'] === 'out'): ?>
+                            <p class="error">* ログインに失敗しました。ユーザーIDとパスワードを正しく入力してください。</p>
+                            <?php endif; ?>
                         <input type="submit" id="submit_button" value="ログイン">
+                        <a id="goto_register_button" href="../member_registration/index.php">アカウント作成はこちら</a>
                     </div>
                 </form>
             </div>

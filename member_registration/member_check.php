@@ -38,7 +38,7 @@ if(!isset($_SESSION['join'])){
                 <div class="display_areas">
                     <div class="display_area userID">
                         <span class="userID_label">ユーザーID</span>
-                        <span class="userID"><?= $_SESSION['join']['userID'] ?></span>
+                        <span class="userID"><?= htmlspecialchars($_SESSION['join']['userID'], ENT_QUOTES | ENT_HTML5) ?></span>
                     </div>
                     <div class="display_area password">
                         <span class="password_label">パスワード</span>
