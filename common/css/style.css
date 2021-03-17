@@ -1,0 +1,127 @@
+.error {
+  padding-top: 5px;
+  color: red;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header .container {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container .header-logo img {
+  width: 150px;
+}
+
+main {
+  background: #D8F6FF;
+}
+
+main .container {
+  height: calc(100vh - 130px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .container .inputarea {
+  background: #fff;
+  padding: 30px;
+  width: 300px;
+  color: #325F8D;
+}
+
+main .container .inputarea .inputarea_title span {
+  display: block;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #325F8D;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+main .container .inputarea form .input_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .container .inputarea form .input_group .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+main .container .inputarea form .input_group .inputs label {
+  padding-bottom: 10px;
+}
+
+main .container .inputarea form .input_group .inputs input {
+  width: 100%;
+}
+
+main .container .inputarea form .input_group .inputs:first-child {
+  padding: 15px 0 20px;
+}
+
+main .container .inputarea form .input_group #submit_button {
+  margin-top: 30px;
+  width: 50%;
+  padding: 5px 0;
+}
+
+footer {
+  background: #5B5B5B;
+}
+
+footer .container {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .container span {
+  color: #fff;
+  font-size: 11px;
+}
+/*# sourceMappingURL=style.css.map */
