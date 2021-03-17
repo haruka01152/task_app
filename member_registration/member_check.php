@@ -2,8 +2,6 @@
 session_start();
 session_regenerate_id(true);
 
-require_once '../common/dbconnect.php';
-
 if(!isset($_SESSION['join'])){
     header('Location: index.php');
     exit();
@@ -26,9 +24,6 @@ if(!isset($_SESSION['join'])){
 
     <header>
         <div class="container">
-            <div class="header-logo">
-                <h1><img src="../common/img/logo.png" alt=""></h1>
-            </div>
         </div>
     </header>
 

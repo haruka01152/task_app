@@ -7,31 +7,18 @@ if(!empty($_POST)){
     if ($_POST['userID'] === '') {
         $error['userID'] = 'blank';
     }
-    //15文字より長い場合エラー
-    if(strlen($_POST['userID']) > 15){
-        $error['userID'] = 'length';
-    }
     //空欄の場合エラー
     if ($_POST['password'] === '') {
         $error['password'] = 'blank';
-    }
-    //15文字より長い場合エラー
-    if(strlen($_POST['password']) > 15){
-        $error['password'] = 'length';
     }
 
     //エラーが起きていなければポストの値をセッションに渡して確認画面に進む
     if(empty($error)){
         $_SESSION['join'] = $_POST;
 
-        header('Location: member_check.php');
+        header('Location: ../main/index.php');
         exit();
     }
-}
-
-//書き直しで戻ってきたらセッションの値をポストに戻す
-if($_REQUEST['action'] === 'rewrite'){
-    $_POST = $_SESSION['join'];
 }
 
 ?>
@@ -44,7 +31,7 @@ if($_REQUEST['action'] === 'rewrite'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style.css">
-    <title>メンバー登録 | タスク管理</title>
+    <title>ログイン | タスク管理</title>
 </head>
 
 <body>
@@ -59,7 +46,7 @@ if($_REQUEST['action'] === 'rewrite'){
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
-                    <span>メンバー登録</span>
+                    <span>ログイン</span>
                 </div>
 
                 <form action="" method="post">
@@ -70,9 +57,6 @@ if($_REQUEST['action'] === 'rewrite'){
                             <?php if ($error['userID'] === 'blank') : ?>
                                 <p class="error">* ユーザーIDを入力してください</p>
                             <?php endif; ?>
-                            <?php if ($error['userID'] === 'length') : ?>
-                                <p class="error">* ユーザーIDは15文字以下の英数字で入力してください</p>
-                            <?php endif; ?>
                         </div>
                         <div class="inputs password">
                             <label for="password">パスワード</label>
@@ -80,11 +64,8 @@ if($_REQUEST['action'] === 'rewrite'){
                             <?php if ($error['password'] === 'blank') : ?>
                                 <p class="error">* パスワードを入力してください</p>
                             <?php endif; ?>
-                            <?php if ($error['password'] === 'length') : ?>
-                                <p class="error">* パスワードは15文字以下の英数字で入力してください</p>
-                            <?php endif; ?>
                         </div>
-                        <input type="submit" id="submit_button" value="登録">
+                        <input type="submit" id="submit_button" value="ログイン">
                     </div>
                 </form>
             </div>

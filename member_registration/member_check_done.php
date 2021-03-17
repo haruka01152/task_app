@@ -2,9 +2,22 @@
 session_start();
 session_regenerate_id(true);
 
+require_once '../common/dbconnect.php';
+
 if (!isset($_SESSION['join'])) {
     header('Location: index.php');
     exit();
+}
+
+if(!empty($_SESSION['join'])){
+    $statement = $db->prepare('INSERT INTO members SET user_id=?, password=?');
+    $statement->execute(array(
+        $_SESSION['join']['userID'],
+        sha1($_SESSION['join']['password'])
+    ));
+    unset($_SESSION['join']);
+
+    $alert = 'OK';
 }
 
 ?>
@@ -24,9 +37,6 @@ if (!isset($_SESSION['join'])) {
 
     <header>
         <div class="container">
-            <div class="header-logo">
-                <h1><img src="../common/img/logo.png" alt=""></h1>
-            </div>
         </div>
     </header>
 
@@ -39,7 +49,11 @@ if (!isset($_SESSION['join'])) {
                 </div>
 
                 <div class="check_done">
-                    <p>メンバー登録が完了しました。</p>
+                    <?php if($alert === 'OK'): ?>
+                        <p>メンバー登録が完了しました。</p>
+                    <?php else: ?>
+                        <p>問題が発生しました。<br>恐れ入りますが最初からやり直してください。</p>
+                    <?php endif; ?>
 
                     <a id="goto_login_button" href="../login/index.php">ログイン画面へ</a>
                 </div>
