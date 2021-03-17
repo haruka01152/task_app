@@ -14,7 +14,7 @@ session_regenerate_id(true);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style.css">
-    <title>メンバー登録確認 | タスク管理</title>
+    <title>登録情報確認 | タスク管理</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@ session_regenerate_id(true);
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
-                    <span>メンバー登録確認</span>
+                    <span>登録情報確認</span>
                 </div>
 
                 <div class="display_area">
