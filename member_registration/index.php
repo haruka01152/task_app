@@ -1,42 +1,37 @@
 <?php
 session_start();
-session_regenerate_id();
+session_regenerate_id(true);
 
-if (!empty($_POST)) {
+if(!empty($_POST)){
     //空欄の場合エラー
     if ($_POST['userID'] === '') {
         $error['userID'] = 'blank';
     }
     //15文字より長い場合エラー
-    if(!empty($_POST['userID']) && strlen($_POST['userID']) > 15){
+    if(strlen($_POST['userID']) > 15){
         $error['userID'] = 'length';
     }
-    //半角英数字じゃない場合エラー
-    if(!empty($_POST['userID']) && !preg_match("/^[a-zA-Z0-9]+$/", $_POST['userID'])){
-        $error['userID'] = 'length';
-    }
-
     //空欄の場合エラー
     if ($_POST['password'] === '') {
         $error['password'] = 'blank';
     }
     //15文字より長い場合エラー
-    if(!empty($_POST['userID']) && strlen($_POST['password']) > 15){
+    if(strlen($_POST['password']) > 15){
         $error['password'] = 'length';
-    }
-    //半角英数字じゃない場合エラー
-    if(!empty($_POST['userID']) && !preg_match("/^[a-zA-Z0-9]+$/", $_POST['userID'])){
-        $error['userID'] = 'length';
     }
 
     //エラーが起きていなければ確認画面に進む
     if(empty($error)){
-        $_SESSION['userID'] = $_POST['userID'];
-        $_SESSION['password'] = sha1($_POST['password']);
+        $_SESSION['join'] = $_POST;
 
         header('Location: member_check.php');
         exit();
     }
+}
+
+
+if($_REQUEST['action'] === 'rewrite'){
+    $_POST = $_SESSION['join'];
 }
 
 ?>
@@ -74,7 +69,7 @@ if (!empty($_POST)) {
                     <div class="input_group">
                         <div class="inputs userID">
                             <label for="userID">ユーザーID</label>
-                            <input type="text" name="userID" id="userID" value="<?= $_POST['userID']; ?>">
+                            <input type="text" name="userID" id="userID" value="<?= htmlspecialchars($_POST['userID'], ENT_QUOTES | ENT_HTML5); ?>">
                             <?php if ($error['userID'] === 'blank') : ?>
                                 <p class="error">* ユーザーIDを入力してください</p>
                             <?php endif; ?>

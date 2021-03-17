@@ -58,6 +58,14 @@ main .container .inputarea .inputarea_title span {
   text-align: center;
 }
 
+main .container .inputarea .check_done {
+  text-align: center;
+}
+
+main .container .inputarea .check_done p {
+  padding: 50px 0 70px;
+}
+
 main .container .inputarea form .input_group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,6 +109,36 @@ main .container .inputarea form .input_group #submit_button {
   margin-top: 30px;
   width: 50%;
   padding: 5px 0;
+}
+
+main .container .inputarea .display_areas {
+  padding: 30px 0;
+}
+
+main .container .inputarea .display_areas .display_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+main .container .inputarea .confirm_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container .inputarea .confirm_buttons input {
+  padding: 5px 40px;
 }
 
 footer {

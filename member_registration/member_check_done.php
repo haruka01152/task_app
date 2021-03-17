@@ -2,9 +2,7 @@
 session_start();
 session_regenerate_id(true);
 
-require_once '../common/dbconnect.php';
-
-if(!isset($_SESSION['join'])){
+if (!isset($_SESSION['join'])) {
     header('Location: index.php');
     exit();
 }
@@ -40,25 +38,13 @@ if(!isset($_SESSION['join'])){
                     <span>登録情報確認</span>
                 </div>
 
-                <div class="display_areas">
-                    <div class="display_area userID">
-                        <span class="userID_label">ユーザーID</span>
-                        <span class="userID"><?= $_SESSION['join']['userID'] ?></span>
-                    </div>
-                    <div class="display_area password">
-                        <span class="password_label">パスワード</span>
-                        <span class="password">表示されません</span>
-                    </div>
-                </div>
+                <div class="check_done">
+                    <p>メンバー登録が完了しました。</p>
 
-                <div class="confirm_buttons">
-                    <a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a>
-                    <form method="post" action="member_check_done.php">
-                        <input type="submit" value="登録する">
-                    </form>
+                    <a id="goto_login_button" href="../login/index.php">ログイン画面へ</a>
                 </div>
-
             </div>
+
         </div>
     </main>
 

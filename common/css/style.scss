@@ -52,6 +52,14 @@ main{
                 }
             }
 
+            .check_done{
+                text-align: center;
+
+                p{
+                    padding:50px 0 70px;
+                }
+            }
+
             form{
                 .input_group{
                     display: flex;
@@ -82,6 +90,26 @@ main{
                         width:50%;
                         padding:5px 0;
                     }
+                }
+            }
+
+            .display_areas{
+                padding:30px 0;
+
+                .display_area{
+                    display:flex;
+                    justify-content: space-between;
+                    padding-bottom: 30px;
+                }
+            }
+
+            .confirm_buttons{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                input{
+                    padding: 5px 40px;
                 }
             }
         }
