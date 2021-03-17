@@ -23,10 +23,6 @@ header .container {
           justify-content: flex-end;
 }
 
-header .container .logout_button {
-  padding-right: 20px;
-}
-
 main {
   background: #D8F6FF;
 }
@@ -146,6 +142,15 @@ main .container .inputarea .confirm_buttons {
 
 main .container .inputarea .confirm_buttons input {
   padding: 5px 40px;
+}
+
+main .container .inputarea .logout_message {
+  padding: 20px 20px 0;
+  text-align: center;
+}
+
+main .container .inputarea .logout_message p {
+  padding-bottom: 20px;
 }
 
 footer {

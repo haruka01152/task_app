@@ -18,6 +18,8 @@ if(!empty($_SESSION['join'])){
     unset($_SESSION['join']);
 
     $alert = 'OK';
+}else{
+    $alert = 'NG';
 }
 
 ?>

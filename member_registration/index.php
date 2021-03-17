@@ -57,7 +57,7 @@ if($_REQUEST['action'] === 'rewrite'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style.css">
-    <title>メンバー登録 | タスク管理</title>
+    <title>アカウント登録 | タスク管理</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@ if($_REQUEST['action'] === 'rewrite'){
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
-                    <span>メンバー登録</span>
+                    <span>アカウント登録</span>
                 </div>
 
                 <form action="" method="post">

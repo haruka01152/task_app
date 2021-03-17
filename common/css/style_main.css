@@ -1,0 +1,63 @@
+.error {
+  padding-top: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header .container {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .container .logout_button {
+  padding-right: 20px;
+}
+
+main {
+  background: #D8F6FF;
+}
+
+main .container {
+  height: calc(100vh - 130px);
+}
+
+main .container .greet {
+  padding-top: 20px;
+}
+
+footer {
+  background: #5B5B5B;
+}
+
+footer .container {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .container span {
+  color: #fff;
+  font-size: 11px;
+}
+/*# sourceMappingURL=style_main.css.map */
