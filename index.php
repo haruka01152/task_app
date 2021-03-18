@@ -2,7 +2,7 @@
 session_start();
 session_regenerate_id(true);
 
-require_once '../common/dbconnect.php';
+require_once './common/dbconnect.php';
 
 if(!empty($_POST)){
     //空欄の場合エラー
@@ -27,7 +27,7 @@ if(!empty($_POST)){
         if($member){
             $_SESSION['id'] = $member['id'];
 
-            header('Location: ../main/index.php');
+            header('Location: ./main/index.php');
             exit();
         }else{
             //一致しなければログインエラーを出す
@@ -44,8 +44,8 @@ if(!empty($_POST)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../common/css/reset.css">
-    <link rel="stylesheet" href="../common/css/style.css">
+    <link rel="stylesheet" href="./common/css/reset.css">
+    <link rel="stylesheet" href="./common/css/style.css">
     <title>ログイン | タスク管理</title>
 </head>
 
@@ -57,7 +57,7 @@ if(!empty($_POST)){
     </header>
 
 
-    <main class="main">
+    <section class="main">
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
@@ -84,12 +84,12 @@ if(!empty($_POST)){
                             <p class="error">* ログインに失敗しました。ユーザーIDとパスワードを正しく入力してください。</p>
                             <?php endif; ?>
                         <input type="submit" id="submit_button" value="ログイン">
-                        <a id="goto_register_button" href="../member_registration/index.php">アカウント作成はこちら</a>
+                        <a id="goto_register_button" href="./member_registration/index.php">アカウント作成はこちら</a>
                     </div>
                 </form>
             </div>
         </div>
-    </main>
+    </section>
 
 
     <footer>

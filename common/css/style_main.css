@@ -38,42 +38,52 @@ header .container {
 }
 
 header .container .logout_button {
-  padding-right: 20px;
+  border: 1px solid #858585;
+  text-align: center;
+  margin-right: 20px;
 }
 
-main {
-  background: #D8F6FF;
+header .container .logout_button a {
+  display: inline-block;
+  color: #383838;
+  padding: 10px 20px;
+}
+
+.main {
+  background-image: url(../img/mokume.jpg);
+  background-size: cover;
   padding: 0 20px;
 }
 
-main .container {
+.main .container {
   height: calc(100vh - 130px);
 }
 
-main .container .greet {
+.main .container .greet {
   padding-top: 20px;
   font-size: 19px;
 }
 
-main .container .main_contents {
+.main .container .main_contents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 15px 0;
 }
 
-main .container .main_contents .main_contents_left {
+.main .container .main_contents .main_contents_left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-right: 30px;
+  padding-right: 50px;
 }
 
-main .container .main_contents .main_contents_left .main_task_tabarea {
+.main .container .main_contents .main_contents_left .main_task_tabarea {
   margin-top: 30px;
+  position: relative;
 }
 
-main .container .main_contents .main_contents_left .main_task_tabarea .tab {
+.main .container .main_contents .main_contents_left .main_task_tabarea .tab {
   cursor: pointer;
   background: #fff;
   font-size: 18px;
@@ -86,27 +96,39 @@ main .container .main_contents .main_contents_left .main_task_tabarea .tab {
   transition: all .3s;
 }
 
-main .container .main_contents .main_contents_left .main_task_tabarea .tab-active {
+.main .container .main_contents .main_contents_left .main_task_tabarea .tab-active {
   color: #fff;
   background: #2AD2CC;
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area {
+.main .container .main_contents .main_contents_left .main_task_tabarea .change_category_button {
+  background: #FF8F8F;
+  color: #fff;
+  padding: 15px 10px;
+  -webkit-box-shadow: 0px 1px 3px gray;
+          box-shadow: 0px 1px 3px gray;
+  border-radius: 20px;
+  position: absolute;
+  right: 28px;
+  bottom: 30px;
+}
+
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area {
   display: none;
   background: #fff;
   padding: 50px;
   margin-left: -15px;
   border-radius: 30px;
-  border: 9px solid #E2E2E2;
+  border: 9px solid #d49b45;
   -webkit-box-shadow: 0px 3px 6px gray;
           box-shadow: 0px 3px 6px gray;
-  position: absolute;
-  z-index: 1;
+  position: relative;
+  z-index: 10;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,21 +140,22 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
           align-items: center;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title h1 {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title h1 {
   font-size: 36px;
   color: #2AD2CC;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title i {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title i {
   color: #C7C7C7;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks {
   padding-top: 50px;
   width: 400px;
+  height: 520px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,7 +164,7 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
           justify-content: space-between;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,19 +175,14 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
   width: 60%;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left .date {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left .date {
   background: #FF8F8F;
   font-size: 13px;
   color: #fff;
   padding: 5px 10px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left .task_name {
-  padding-top: 30px;
-  white-space: wrap;
-}
-
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,16 +192,30 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
   font-size: 13px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right .change_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right .change_task {
   color: #11aaa5;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right .delete_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right .delete_task {
   padding-left: 20px;
   color: #db3838;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .fa-chevron {
+  color: #C7C7C7;
+  position: absolute;
+  top: 50%;
+}
+
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .fa-chevron-circle-right {
+  right: 5px;
+}
+
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .fa-chevron-circle-left {
+  left: 5px;
+}
+
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show {
   display: block;
   background: #fff;
   padding: 50px;
@@ -194,7 +226,7 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
           box-shadow: 0px 3px 6px gray;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,30 +238,31 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
           align-items: center;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title h1 {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title h1 {
   font-size: 36px;
   color: #2AD2CC;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title i {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title i {
   color: #C7C7C7;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks {
   padding-top: 50px;
   width: 400px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 6px 0;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,19 +273,19 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
   width: 60%;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left .date {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left .date {
   background: #FF8F8F;
   font-size: 13px;
   color: #fff;
   padding: 5px 10px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left .task_name {
-  padding-top: 30px;
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left .task_name {
+  margin-top: 20px;
   white-space: wrap;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,13 +295,109 @@ main .container .main_contents .main_contents_left .main_task_areas .main_task_a
   font-size: 13px;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right .change_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right .change_task {
   color: #11aaa5;
 }
 
-main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right .delete_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right .delete_task {
   padding-left: 20px;
   color: #db3838;
+}
+
+.main .container .main_contents .main_contents_right {
+  width: 40%;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .main_contents_right_top_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .main_contents_right_top_title i {
+  color: #fff;
+  background: #2AD2CC;
+  padding: 5px 13px;
+  border-radius: 10px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .main_contents_right_top_title h2 {
+  font-size: 30px;
+  color: #2AD2CC;
+  padding-left: 20px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea {
+  background: #fff;
+  padding: 30px 30px 5px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: 9px solid #E2E2E2;
+  -webkit-box-shadow: 0px 3px 6px gray;
+          box-shadow: 0px 3px 6px gray;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea .right_top_task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom {
+  padding-top: 86px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .main_contents_right_bottom_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .main_contents_right_bottom_title i {
+  color: #fff;
+  background: #FF8F8F;
+  padding: 5px 17px;
+  border-radius: 10px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .main_contents_right_bottom_title h3 {
+  font-size: 30px;
+  color: #FF8F8F;
+  padding-left: 20px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .right_bottom_taskarea {
+  background: #fff;
+  padding: 30px 30px 5px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: 9px solid #E2E2E2;
+  -webkit-box-shadow: 0px 3px 6px gray;
+          box-shadow: 0px 3px 6px gray;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .right_bottom_taskarea .right_bottom_task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 footer {

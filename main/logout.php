@@ -33,7 +33,7 @@ setcookie('email', '', time() - 3600);
     </header>
 
 
-    <main class="main">
+    <section class="main">
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
@@ -42,11 +42,11 @@ setcookie('email', '', time() - 3600);
 
                 <div class="logout_message">
                     <p>ログアウトしました。</p><br><br>
-                    <a href="../login/index.php">ログイン画面へ</a>
+                    <a href="../index.php">ログイン画面へ</a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
 
     <footer>

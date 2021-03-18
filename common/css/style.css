@@ -23,11 +23,11 @@ header .container {
           justify-content: flex-end;
 }
 
-main {
+.main {
   background: #D8F6FF;
 }
 
-main .container {
+.main .container {
   height: calc(100vh - 130px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,14 +40,14 @@ main .container {
           justify-content: center;
 }
 
-main .container .inputarea {
+.main .container .inputarea {
   background: #fff;
   padding: 30px;
   width: 300px;
   color: #325F8D;
 }
 
-main .container .inputarea .inputarea_title span {
+.main .container .inputarea .inputarea_title span {
   display: block;
   padding-bottom: 3px;
   margin-bottom: 20px;
@@ -57,15 +57,15 @@ main .container .inputarea .inputarea_title span {
   text-align: center;
 }
 
-main .container .inputarea .check_done {
+.main .container .inputarea .check_done {
   text-align: center;
 }
 
-main .container .inputarea .check_done p {
+.main .container .inputarea .check_done p {
   padding: 50px 0 70px;
 }
 
-main .container .inputarea form .input_group {
+.main .container .inputarea form .input_group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,7 +81,7 @@ main .container .inputarea form .input_group {
           justify-content: center;
 }
 
-main .container .inputarea form .input_group .inputs {
+.main .container .inputarea form .input_group .inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,33 +92,33 @@ main .container .inputarea form .input_group .inputs {
   width: 80%;
 }
 
-main .container .inputarea form .input_group .inputs label {
+.main .container .inputarea form .input_group .inputs label {
   padding-bottom: 10px;
 }
 
-main .container .inputarea form .input_group .inputs input {
+.main .container .inputarea form .input_group .inputs input {
   width: 100%;
 }
 
-main .container .inputarea form .input_group .inputs:first-child {
+.main .container .inputarea form .input_group .inputs:first-child {
   padding: 15px 0 20px;
 }
 
-main .container .inputarea form .input_group #submit_button {
+.main .container .inputarea form .input_group #submit_button {
   margin-top: 30px;
   width: 50%;
   padding: 5px 0;
 }
 
-main .container .inputarea form .input_group #goto_login_button, main .container .inputarea form .input_group #goto_register_button {
+.main .container .inputarea form .input_group #goto_login_button, .main .container .inputarea form .input_group #goto_register_button {
   margin-top: 30px;
 }
 
-main .container .inputarea .display_areas {
+.main .container .inputarea .display_areas {
   padding: 30px 0;
 }
 
-main .container .inputarea .display_areas .display_area {
+.main .container .inputarea .display_areas .display_area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,7 +128,7 @@ main .container .inputarea .display_areas .display_area {
   padding-bottom: 30px;
 }
 
-main .container .inputarea .confirm_buttons {
+.main .container .inputarea .confirm_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,16 +140,16 @@ main .container .inputarea .confirm_buttons {
           align-items: center;
 }
 
-main .container .inputarea .confirm_buttons input {
+.main .container .inputarea .confirm_buttons input {
   padding: 5px 40px;
 }
 
-main .container .inputarea .logout_message {
+.main .container .inputarea .logout_message {
   padding: 20px 20px 0;
   text-align: center;
 }
 
-main .container .inputarea .logout_message p {
+.main .container .inputarea .logout_message p {
   padding-bottom: 20px;
 }
 

@@ -43,7 +43,7 @@ if(!empty($_SESSION['join'])){
     </header>
 
 
-    <main class="main">
+    <section class="main">
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
@@ -62,7 +62,7 @@ if(!empty($_SESSION['join'])){
             </div>
 
         </div>
-    </main>
+    </section>
 
 
     <footer>

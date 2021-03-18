@@ -40,7 +40,7 @@ $loginmember = $statement->fetch();
     </header>
 
 
-    <main class="main">
+    <section class="main">
         <div class="container">
             <div class="greet">
                 <p><?= htmlspecialchars($loginmember['user_id'], ENT_QUOTES | ENT_HTML5) ?>さん、おつかれさまです</p>
@@ -70,6 +70,9 @@ $loginmember = $statement->fetch();
                         <div class="tab">
                             <span>tab7</span>
                         </div>
+
+                        <a href="" class="change_category_button">カテゴリ編集</a>
+
                     </div>
 
                     <div class="main_task_areas">
@@ -82,65 +85,68 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            <a href="" class="change_task"></a>
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                     <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                     <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                     <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                     <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -152,65 +158,56 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -222,65 +219,68 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -292,65 +292,20 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -362,65 +317,68 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -432,65 +390,20 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
 
                         <div class="main_task_area">
@@ -502,77 +415,133 @@ $loginmember = $statement->fetch();
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
+                                            <span class="date">〇月〇日（〇） 13:00</span>
+                                            <a href="" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 〇時〇分まで</span>
-                                            <span class="task_name">テキストが入ります。</span>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            <a href="" class="change_task">変更△</a>
+                                            
                                             <a href="" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
                                 </div>
+
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
+                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
+
                     </div>
                 </div>
                 <div class="main_contents_right">
                     <div class="main_contents_right_top">
+                        <div class="main_contents_right_top_title">
+                        <i class="fas fa-lightbulb fa-2x"></i><h2>今日のご予定</h2>
+                        </div>
+
+                        <div class="right_top_taskarea">
+                            <div class="right_top_tasks">
+                                <div class="right_top_task">
+                                    <span class="right_top_time">13:00</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_top_task">
+                                    <span class="right_top_time">13:00</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_top_task">
+                                    <span class="right_top_time">13:00</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                     <div class="main_contents_right_bottom">
+                        <div class="main_contents_right_bottom_title">
+                            <i class="fas fa-exclamation fa-2x"></i><h3>もうすぐしめきりのご予定</h3>
+                        </div>
+
+                        <div class="right_bottom_taskarea">
+                            <div class="right_bottom_tasks">
+                                <div class="right_bottom_task">
+                                    <span class="right_bottom_time">〇月〇日</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_bottom_task">
+                                    <span class="right_bottom_time">〇月〇日</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_bottom_task">
+                                    <span class="right_bottom_time">〇月〇日</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_bottom_task">
+                                    <span class="right_bottom_time">〇月〇日</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                                <div class="right_bottom_task">
+                                    <span class="right_bottom_time">〇月〇日</span>
+
+                                    <a href="" class="task_name">テキストが入ります。</a>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
-    </main>
+    </section>
 
 
     <footer>

@@ -68,7 +68,7 @@ if($_REQUEST['action'] === 'rewrite'){
     </header>
 
 
-    <main class="main">
+    <section class="main">
         <div class="container">
             <div class="inputarea">
                 <div class="inputarea_title">
@@ -101,12 +101,12 @@ if($_REQUEST['action'] === 'rewrite'){
                             <?php endif; ?>
                         </div>
                         <input type="submit" id="submit_button" value="登録">
-                        <a id="goto_login_button" href="../login/index.php">アカウントをお持ちの方はこちら</a>
+                        <a id="goto_login_button" href="../index.php">アカウントをお持ちの方はこちら</a>
                     </div>
                 </form>
             </div>
         </div>
-    </main>
+    </section>
 
 
     <footer>
