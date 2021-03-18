@@ -1,3 +1,12 @@
+body {
+    font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      Meiryo,
+      sans-serif;
+  }
+
 .error{
     padding-top: 10px;
     color:red;
@@ -10,7 +19,14 @@
     margin:0 auto;
 }
 
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
 header{
+    box-shadow:3px 3px 6px gray;
+
     .container{
         height:80px;
         display:flex;
@@ -26,12 +42,186 @@ header{
 
 main{
     background:#D8F6FF;
+    padding: 0 20px;
 
     .container{
         height:calc(100vh - 130px);
         
         .greet{
             padding-top:20px;
+            font-size: 19px;
+        }
+
+        .main_contents{
+            display: flex;
+            padding: 15px 0;
+
+            .main_contents_left{
+                display: flex;
+                padding-right:30px;
+
+                .main_task_tabarea{
+                    margin-top: 30px;
+
+                    .tab{
+                        cursor: pointer;
+                        background:#fff;
+                        font-size: 18px;
+                        border-radius: 20px;
+                        box-shadow:0px 1px 3px gray;
+                        padding: 20px 60px;
+                        margin-bottom: 20px;
+                        transition:all .3s;
+                    }
+
+                    .tab-active{
+                        color:#fff;
+                        background:#2AD2CC;
+                        transform: scale(1.2,1.2);
+                    }
+                }
+
+                .main_task_areas{
+                    .main_task_area{
+                        display: none;
+                        background:#fff;
+                        padding:50px;
+                        margin-left: -15px;
+                        border-radius: 30px;
+                        border:9px solid #E2E2E2;
+                        box-shadow:0px 3px 6px gray;
+                        position:absolute;
+                        z-index:1;
+
+                        .main_task_area_title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            h1{
+                                font-size: 36px;
+                                color:#2AD2CC;
+                            }
+
+                            i{
+                                color:#C7C7C7;
+                            }
+                        }
+
+                        .main_tasks{
+                            padding-top: 50px;
+                            width:400px;
+
+                            .main_task{
+                                display: flex;
+                                justify-content: space-between;
+
+                                .main_task_left{
+                                    display: flex;
+                                    flex-direction: column;
+                                    width:60%;
+
+                                    .date{
+                                        background:#FF8F8F;
+                                        font-size: 13px;
+                                        color:#fff;
+                                        padding: 5px 10px;
+                                    }
+
+                                    .task_name{
+                                        padding-top: 30px;
+                                        white-space: wrap;
+                                    }
+                                }
+
+                                .main_task_right{
+                                    display: flex;
+                                    align-items: flex-end;
+                                    font-size: 13px;
+
+                                    .change_task{
+                                        color:#11aaa5;
+                                    }
+
+                                    .delete_task{
+                                        padding-left: 20px;
+                                        color:#db3838;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main_task_area_show{
+                        display: block;
+                        background:#fff;
+                        padding:50px;
+                        margin-left: -15px;
+                        border-radius: 30px;
+                        border:9px solid #E2E2E2;
+                        box-shadow:0px 3px 6px gray;
+
+                        .main_task_area_title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            h1{
+                                font-size: 36px;
+                                color:#2AD2CC;
+                            }
+
+                            i{
+                                color:#C7C7C7;
+                            }
+                        }
+
+                        .main_tasks{
+                            padding-top: 50px;
+                            width:400px;
+
+                            .main_task{
+                                display: flex;
+                                justify-content: space-between;
+
+                                .main_task_left{
+                                    display: flex;
+                                    flex-direction: column;
+                                    width:60%;
+
+                                    .date{
+                                        background:#FF8F8F;
+                                        font-size: 13px;
+                                        color:#fff;
+                                        padding: 5px 10px;
+                                    }
+
+                                    .task_name{
+                                        padding-top: 30px;
+                                        white-space: wrap;
+                                    }
+                                }
+
+                                .main_task_right{
+                                    display: flex;
+                                    align-items: flex-end;
+                                    font-size: 13px;
+
+                                    .change_task{
+                                        color:#11aaa5;
+                                    }
+
+                                    .delete_task{
+                                        padding-left: 20px;
+                                        color:#db3838;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
         }
 
     }

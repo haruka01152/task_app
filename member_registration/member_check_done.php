@@ -52,7 +52,7 @@ if(!empty($_SESSION['join'])){
 
                 <div class="check_done">
                     <?php if($alert === 'OK'): ?>
-                        <p>メンバー登録が完了しました。</p>
+                        <p>アカウント登録が完了しました。</p>
                     <?php else: ?>
                         <p>問題が発生しました。<br>恐れ入りますが最初からやり直してください。</p>
                     <?php endif; ?>
