@@ -15,9 +15,8 @@ $statement = $db->prepare('SELECT * FROM members WHERE id=?');
 $statement->execute(array($member['id']));
 $loginmember = $statement->fetch();
 
-$tasks = $db->prepare('SELECT * FROM tasks,members WHERE tasks.member_id=members.id');
-$tasks->execute(array());
-$task = $tasks->fetch();
+$tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=?');
+$tasks->execute(array($loginmember['id']));
 
 ?>
 <!DOCTYPE html>
@@ -88,66 +87,19 @@ $task = $tasks->fetch();
                                 </div>
 
                                 <div class="main_tasks">
+                                   <?php while($task = $tasks->fetch()): ?>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="modify_task.php?task_id=<?= $loginmember[''] ?>" class="task_name">テキストが入ります。</a>
+                                            <span class="date"><?= $task['datetime'] ?></span>
+                                            <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= $task['task_name'] ?></a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="" class="change_task"></a>
-                                            <a href="" class="delete_task">削除×</a>
+                                            <a href="delete_task.php?task_id=<?= $task['id'] ?>" class="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="main_task">
-                                    <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                    <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                    <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                    <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
+                                   <?php endwhile; ?>
                                 </div>
 
                                 <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
