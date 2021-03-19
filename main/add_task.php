@@ -67,6 +67,12 @@ $statement->execute(array(
                         <span id="task_name_label">タスク名</span>
                         <input type="text" name="task_name" id="task_name">
                     </div>
+                    <div class="addtask_form category_name">
+                        <span id="category_name_label">カテゴリ</span>
+                        <select name="category_name" id="category_name">
+                            <option value=""></option>
+                        </select>
+                    </div>
                     <div class="addtask_form detail">
                         <span id="task_detail_label">詳細メモ</span>
                         <textarea name="task_detail" id="task_detail" cols="30" rows="10"></textarea>

@@ -18,6 +18,9 @@ $loginmember = $statement->fetch();
 $tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=?');
 $tasks->execute(array($loginmember['id']));
 
+$categories = $db->query('SELECT * FROM categories WHERE id=1');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
