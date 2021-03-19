@@ -68,51 +68,50 @@ header {
 
         .main_contents {
             display: flex;
+            justify-content: space-between;
             padding: 45px 0 15px;
 
             .main_contents_left {
                 display: flex;
-                padding-right: 50px;
 
-                .main_task_tabarea {
-                    margin-top: 30px;
-                    position: relative;
+                // .main_task_tabarea {
+                //     margin-top: 30px;
+                //     position: relative;
 
-                    .tab {
-                        cursor: pointer;
-                        background: #fff;
-                        font-size: 18px;
-                        border-radius: 20px;
-                        box-shadow: 0px 1px 3px gray;
-                        padding: 20px 60px;
-                        margin-bottom: 20px;
-                        transition: all .3s;
-                    }
+                //     .tab {
+                //         cursor: pointer;
+                //         background: #fff;
+                //         font-size: 18px;
+                //         border-radius: 20px;
+                //         box-shadow: 0px 1px 3px gray;
+                //         padding: 20px 60px;
+                //         margin-bottom: 20px;
+                //         transition: all .3s;
+                //     }
 
-                    .tab-active {
-                        color: #fff;
-                        background: #2AD2CC;
-                        transform: scale(1.2, 1.2);
-                    }
+                //     .tab-active {
+                //         color: #fff;
+                //         background: #2AD2CC;
+                //         transform: scale(1.2, 1.2);
+                //     }
 
-                    .change_category_button {
-                        background: #FF8F8F;
-                        color: #fff;
-                        padding: 15px 10px;
-                        box-shadow: 0px 1px 3px gray;
-                        border-radius: 20px;
-                        position: absolute;
-                        right: 28px;
-                        bottom: 30px;
-                    }
-                }
+                //     .change_category_button {
+                //         background: #FF8F8F;
+                //         color: #fff;
+                //         padding: 15px 10px;
+                //         box-shadow: 0px 1px 3px gray;
+                //         border-radius: 20px;
+                //         position: absolute;
+                //         right: 28px;
+                //         bottom: 30px;
+                //     }
+                // }
 
                 .main_task_areas {
                     .main_task_area {
                         display: none;
                         background: #fff;
                         padding: 50px;
-                        margin-left: -15px;
                         border-radius: 30px;
                         border: 9px solid #d49b45;
                         box-shadow: 0px 3px 6px gray;
@@ -136,7 +135,7 @@ header {
 
                         .main_tasks {
                             padding-top: 30px;
-                            width: 400px;
+                            width: 500px;
                             height: 520px;
 
                             .main_task {
@@ -337,15 +336,6 @@ header {
                     }
 
                 }
-            }
-        }
-
-        .category_name {
-            padding: 30px 0;
-
-            span {
-                font-size: 36px;
-                color: #d49b45;
             }
         }
 

@@ -72,6 +72,9 @@ header .container .logout_button a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 45px 0 15px;
 }
 
@@ -79,51 +82,12 @@ header .container .logout_button a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-right: 50px;
-}
-
-.main .container .main_contents .main_contents_left .main_task_tabarea {
-  margin-top: 30px;
-  position: relative;
-}
-
-.main .container .main_contents .main_contents_left .main_task_tabarea .tab {
-  cursor: pointer;
-  background: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 1px 3px gray;
-          box-shadow: 0px 1px 3px gray;
-  padding: 20px 60px;
-  margin-bottom: 20px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.main .container .main_contents .main_contents_left .main_task_tabarea .tab-active {
-  color: #fff;
-  background: #2AD2CC;
-  -webkit-transform: scale(1.2, 1.2);
-          transform: scale(1.2, 1.2);
-}
-
-.main .container .main_contents .main_contents_left .main_task_tabarea .change_category_button {
-  background: #FF8F8F;
-  color: #fff;
-  padding: 15px 10px;
-  -webkit-box-shadow: 0px 1px 3px gray;
-          box-shadow: 0px 1px 3px gray;
-  border-radius: 20px;
-  position: absolute;
-  right: 28px;
-  bottom: 30px;
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area {
   display: none;
   background: #fff;
   padding: 50px;
-  margin-left: -15px;
   border-radius: 30px;
   border: 9px solid #d49b45;
   -webkit-box-shadow: 0px 3px 6px gray;
@@ -155,7 +119,7 @@ header .container .logout_button a {
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks {
   padding-top: 30px;
-  width: 400px;
+  width: 500px;
   height: 520px;
 }
 
@@ -402,15 +366,6 @@ header .container .logout_button a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.main .container .category_name {
-  padding: 30px 0;
-}
-
-.main .container .category_name span {
-  font-size: 36px;
-  color: #d49b45;
 }
 
 .main .container .addtask_area {

@@ -9,6 +9,16 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+$member['id'] = $_SESSION['id'];
+
+$statement = $db->prepare('INSERT INTO tasks SET member_id=?,task_name=?,task_detail=?,datetime=?');
+$statement->execute(array(
+    $member['id'],
+    $_POST['task_name'],
+    $_POST['task_detail'],
+    $_POST['datetime']
+));
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,7 +30,7 @@ if(!isset($_SESSION['id'])){
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> 
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style_main.css">
-    <title>タスク追加 | タスク管理</title>
+    <title>タスク追加完了 | タスク管理</title>
 </head>
 
 <body>
@@ -39,27 +49,11 @@ if(!isset($_SESSION['id'])){
 
             <div class="addtask_area">
                 <div class="addtask_area_title">
-                    <h1>タスク追加</h1>
+                    <h1>タスク追加完了</h1>
                 </div>
 
-                <form method="post" action="add_task_done.php" id="addtask_forms">
-                    <div class="addtask_form datetime">
-                        <span id="datetime_label">日時</span>
-                        <input type="datetime-local" name="datetime" id="datetime">
-                    </div>
-                    <div class="addtask_form task_name">
-                        <span id="task_name_label">タスク名</span>
-                        <input type="text" name="task_name" id="task_name">
-                    </div>
-                    <div class="addtask_form detail">
-                        <span id="task_detail_label">詳細メモ</span>
-                        <textarea name="task_detail" id="task_detail" cols="30" rows="10"></textarea>
-                    </div>
+                <p>タスクの追加が完了しました。</p>
 
-                    <div class="addtask_submitbutton">
-                        <input type="submit" value="登録">
-                    </div>
-                </form>
             </div>
 
             <div class="goto_topbutton">
@@ -76,7 +70,6 @@ if(!isset($_SESSION['id'])){
             </div>
         </div>
     </footer>
-
 
 </body>
 

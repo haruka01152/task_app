@@ -54,7 +54,7 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
 
             <section class="main_contents">
                 <div class="main_contents_left">
-                    <div class="main_task_tabarea">
+                    <!-- <div class="main_task_tabarea">
                         <div class="tab tab-active">
                             <span>tab1</span>
                         </div>
@@ -80,12 +80,12 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
                         <a href="modify_category.php" class="change_category_button">カテゴリ編集</a>
                         <input type="hidden" name="category_id" value="">
 
-                    </div>
+                    </div> -->
 
                     <div class="main_task_areas">
                         <div class="main_task_area main_task_area_show">
                                 <div class="main_task_area_title">
-                                    <h1>カテゴリ名1</h1>
+                                    <h1>すべてのタスク</h1>
                                     <a href="add_task.php?category_id=<?php  ?>" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
@@ -108,325 +108,6 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
                                 <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
                                 <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
                         </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名2</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名3</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名4</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名5</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名6</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
-                        <div class="main_task_area">
-                                <div class="main_task_area_title">
-                                    <h1>カテゴリ名7</h1>
-                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
-                                </div>
-
-                                <div class="main_tasks">
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="main_task">
-                                        <div class="main_task_left">
-                                            <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
-                                        </div>
-                                        
-                                        <div class="main_task_right">
-                                            
-                                            <a href="" class="delete_task">削除×</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-left fa-2x"></i></a>
-                                <a href=""><i class="fas fa-chevron fa-chevron-circle-right fa-2x"></i></a>
-                        </div>
-
                     </div>
                 </div>
                 <div class="main_contents_right">
@@ -513,7 +194,7 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
     $(function() {
   let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
@@ -524,7 +205,7 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
     $(".main_task_area").removeClass("main_task_area_show").eq(index).addClass("main_task_area_show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
   })
 })
-</script>
+</script> -->
 
 </body>
 
