@@ -11,6 +11,9 @@
 }
 
 header{
+    position:relative;
+    z-index:10;
+
     .container{
         height:80px;
         display:flex;

@@ -15,6 +15,10 @@ $statement = $db->prepare('SELECT * FROM members WHERE id=?');
 $statement->execute(array($member['id']));
 $loginmember = $statement->fetch();
 
+$tasks = $db->prepare('SELECT * FROM tasks,members WHERE tasks.member_id=members.id');
+$tasks->execute(array());
+$task = $tasks->fetch();
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -71,7 +75,8 @@ $loginmember = $statement->fetch();
                             <span>tab7</span>
                         </div>
 
-                        <a href="" class="change_category_button">カテゴリ編集</a>
+                        <a href="modify_category.php" class="change_category_button">カテゴリ編集</a>
+                        <input type="hidden" name="category_id" value="">
 
                     </div>
 
@@ -79,14 +84,14 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area main_task_area_show">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名1</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php?category_id=<?php  ?>" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
                                     <div class="main_task">
                                         <div class="main_task_left">
                                             <span class="date">〇月〇日（〇） 13:00</span>
-                                            <a href="" class="task_name">テキストが入ります。</a>
+                                            <a href="modify_task.php?task_id=<?= $loginmember[''] ?>" class="task_name">テキストが入ります。</a>
                                         </div>
                                         
                                         <div class="main_task_right">
@@ -152,7 +157,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名2</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
@@ -213,7 +218,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名3</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
@@ -286,7 +291,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名4</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
@@ -311,7 +316,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名5</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
@@ -384,7 +389,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名6</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
@@ -409,7 +414,7 @@ $loginmember = $statement->fetch();
                         <div class="main_task_area">
                                 <div class="main_task_area_title">
                                     <h1>カテゴリ名7</h1>
-                                    <a href="" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
