@@ -110,7 +110,7 @@ header .container .logout_button a {
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title h1 {
   font-size: 36px;
-  color: #2AD2CC;
+  color: #93da7e;
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_task_area_title i {
@@ -144,7 +144,7 @@ header .container .logout_button a {
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_left .date {
-  background: #FF8F8F;
+  background: #93da7e;
   font-size: 13px;
   color: #fff;
   padding: 5px 10px;
@@ -208,16 +208,11 @@ header .container .logout_button a {
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title h1 {
   font-size: 36px;
-  color: #2AD2CC;
+  color: #93da7e;
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_task_area_title i {
   color: #C7C7C7;
-}
-
-.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks {
-  padding-top: 50px;
-  width: 400px;
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task {
@@ -242,7 +237,7 @@ header .container .logout_button a {
 }
 
 .main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_left .date {
-  background: #FF8F8F;
+  background: #93da7e;
   font-size: 13px;
   color: #fff;
   padding: 5px 10px;
@@ -287,20 +282,20 @@ header .container .logout_button a {
 
 .main .container .main_contents .main_contents_right .main_contents_right_top .main_contents_right_top_title i {
   color: #fff;
-  background: #2AD2CC;
+  background: #93da7e;
   padding: 5px 13px;
   border-radius: 10px;
 }
 
 .main .container .main_contents .main_contents_right .main_contents_right_top .main_contents_right_top_title h2 {
   font-size: 30px;
-  color: #2AD2CC;
+  color: #93da7e;
   padding-left: 20px;
 }
 
 .main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea {
   background: #fff;
-  padding: 30px 30px 5px;
+  padding: 30px;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -311,7 +306,11 @@ header .container .logout_button a {
           box-shadow: 0px 3px 6px gray;
 }
 
-.main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea .right_top_task {
+.main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea .right_top_tasks {
+  height: 131px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_top .right_top_taskarea .right_top_tasks .right_top_task {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,14 +334,14 @@ header .container .logout_button a {
 
 .main .container .main_contents .main_contents_right .main_contents_right_bottom .main_contents_right_bottom_title i {
   color: #fff;
-  background: #FF8F8F;
+  background: #93da7e;
   padding: 5px 17px;
   border-radius: 10px;
 }
 
 .main .container .main_contents .main_contents_right .main_contents_right_bottom .main_contents_right_bottom_title h3 {
   font-size: 30px;
-  color: #FF8F8F;
+  color: #93da7e;
   padding-left: 20px;
 }
 
@@ -359,7 +358,11 @@ header .container .logout_button a {
           box-shadow: 0px 3px 6px gray;
 }
 
-.main .container .main_contents .main_contents_right .main_contents_right_bottom .right_bottom_taskarea .right_bottom_task {
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .right_bottom_taskarea .right_bottom_tasks {
+  height: 236px;
+}
+
+.main .container .main_contents .main_contents_right .main_contents_right_bottom .right_bottom_taskarea .right_bottom_tasks .right_bottom_task {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -384,9 +387,14 @@ header .container .logout_button a {
 
 .main .container .addtask_area .addtask_area_title {
   font-size: 30px;
-  color: #FF8F8F;
+  color: #93da7e;
   text-align: center;
   padding: 30px;
+}
+
+.main .container .addtask_area #addtask_done_message {
+  text-align: center;
+  padding: 50px;
 }
 
 .main .container .addtask_area #addtask_forms {
@@ -426,7 +434,7 @@ header .container .logout_button a {
 }
 
 .main .container .goto_topbutton a {
-  background: #FF8F8F;
+  background: #93da7e;
   color: #fff;
   padding: 15px 20px;
   -webkit-box-shadow: 0px 1px 3px gray;

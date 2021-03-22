@@ -91,12 +91,12 @@ header {
 
                 //     .tab-active {
                 //         color: #fff;
-                //         background: #2AD2CC;
+                //         background: #93da7e;
                 //         transform: scale(1.2, 1.2);
                 //     }
 
                 //     .change_category_button {
-                //         background: #FF8F8F;
+                //         background: #93da7e;
                 //         color: #fff;
                 //         padding: 15px 10px;
                 //         box-shadow: 0px 1px 3px gray;
@@ -125,7 +125,7 @@ header {
 
                             h1 {
                                 font-size: 36px;
-                                color: #2AD2CC;
+                                color: #93da7e;
                             }
 
                             i {
@@ -148,7 +148,7 @@ header {
                                     width: 60%;
 
                                     .date {
-                                        background: #FF8F8F;
+                                        background: #93da7e;
                                         font-size: 13px;
                                         color: #fff;
                                         padding: 5px 10px;
@@ -203,7 +203,7 @@ header {
 
                             h1 {
                                 font-size: 36px;
-                                color: #2AD2CC;
+                                color: #93da7e;
                             }
 
                             i {
@@ -212,9 +212,6 @@ header {
                         }
 
                         .main_tasks {
-                            padding-top: 50px;
-                            width: 400px;
-
                             .main_task {
                                 display: flex;
                                 justify-content: space-between;
@@ -226,7 +223,7 @@ header {
                                     width: 60%;
 
                                     .date {
-                                        background: #FF8F8F;
+                                        background: #93da7e;
                                         font-size: 13px;
                                         color: #fff;
                                         padding: 5px 10px;
@@ -269,21 +266,21 @@ header {
 
                         i {
                             color: #fff;
-                            background: #2AD2CC;
+                            background: #93da7e;
                             padding: 5px 13px;
                             border-radius: 10px;
                         }
 
                         h2 {
                             font-size: 30px;
-                            color: #2AD2CC;
+                            color: #93da7e;
                             padding-left: 20px;
                         }
                     }
 
                     .right_top_taskarea {
                         background: #fff;
-                        padding: 30px 30px 5px;
+                        padding: 30px;
                         width: 100%;
                         box-sizing: border-box;
                         margin-top: 30px;
@@ -291,10 +288,14 @@ header {
                         border: 9px solid #E2E2E2;
                         box-shadow: 0px 3px 6px gray;
 
-                        .right_top_task {
-                            display: flex;
-                            justify-content: space-between;
-                        }
+                        .right_top_tasks{
+                            height:131px;
+
+                                .right_top_task {
+                                    display: flex;
+                                    justify-content: space-between;
+                                }
+                            }
                     }
                 }
 
@@ -307,14 +308,14 @@ header {
 
                         i {
                             color: #fff;
-                            background: #FF8F8F;
+                            background: #93da7e;
                             padding: 5px 17px;
                             border-radius: 10px;
                         }
 
                         h3 {
                             font-size: 30px;
-                            color: #FF8F8F;
+                            color: #93da7e;
                             padding-left: 20px;
                         }
                     }
@@ -329,10 +330,15 @@ header {
                         border: 9px solid #E2E2E2;
                         box-shadow: 0px 3px 6px gray;
 
-                        .right_bottom_task {
-                            display: flex;
-                            justify-content: space-between;
-                        }
+                        .right_bottom_tasks{
+                            height:236px;
+
+                                .right_bottom_task {
+                                    display: flex;
+                                    justify-content: space-between;
+                                }
+                            }
+
                     }
 
                 }
@@ -352,9 +358,14 @@ header {
 
             .addtask_area_title {
                 font-size: 30px;
-                color: #FF8F8F;
+                color: #93da7e;
                 text-align: center;
                 padding: 30px;
+            }
+
+            #addtask_done_message{
+                text-align: center;
+                padding: 50px;
             }
 
             #addtask_forms {
@@ -393,7 +404,7 @@ header {
             margin-top: 50px;
 
             a {
-                background: #FF8F8F;
+                background: #93da7e;
                 color: #fff;
                 padding: 15px 20px;
                 box-shadow: 0px 1px 3px gray;

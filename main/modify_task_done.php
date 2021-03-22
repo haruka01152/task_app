@@ -9,15 +9,13 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
-$member['id'] = $_SESSION['id'];
-
-$statement = $db->prepare('INSERT INTO tasks SET member_id=?,task_name=?,task_detail=?, date=?, datetime=?');
-$statement->execute(array(
-    $member['id'],
+$updates = $db->prepare('UPDATE tasks SET task_name=?, task_detail=?, date=?, datetime=? WHERE id=?');
+$updates->execute(array(
     $_POST['task_name'],
     $_POST['task_detail'],
     $_POST['datetime'],
-    $_POST['datetime']
+    $_POST['datetime'],
+    $_SESSION['task_id']
 ));
 
 ?>
@@ -31,7 +29,7 @@ $statement->execute(array(
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> 
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style_main.css">
-    <title>タスク追加完了 | タスク管理</title>
+    <title>タスク修正完了 | タスク管理</title>
 </head>
 
 <body>
@@ -50,11 +48,11 @@ $statement->execute(array(
 
             <div class="addtask_area">
                 <div class="addtask_area_title">
-                    <h1>タスク追加完了</h1>
+                    <h1>タスク修正完了</h1>
                 </div>
 
                 <div id="addtask_done_message">
-                    <p>タスクの追加が完了しました。</p>
+                    <p>タスクの修正が完了しました。</p>
                 </div>
 
             </div>

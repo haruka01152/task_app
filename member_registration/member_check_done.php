@@ -57,7 +57,7 @@ if(!empty($_SESSION['join'])){
                         <p>問題が発生しました。<br>恐れ入りますが最初からやり直してください。</p>
                     <?php endif; ?>
 
-                    <a id="goto_login_button" href="../login/index.php">ログイン画面へ</a>
+                    <a id="goto_login_button" href="../index.php">ログイン画面へ</a>
                 </div>
             </div>
 

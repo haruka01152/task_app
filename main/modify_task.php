@@ -9,19 +9,11 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
-$post = htmlspecialchars($_POST, ENT_QUOTES | ENT_HTML5);
+$_SESSION['task_id'] = $_REQUEST['task_id'];
 
 $tasks = $db->prepare('SELECT * FROM tasks WHERE id=?');
 $tasks->execute(array($_REQUEST['task_id']));
 $task = $tasks->fetch();
-
-$statement = $db->prepare('UPDATE tasks SET task_name=?,category_id=?,task_detail=?,datetime=? WHERE id=?');
-$statement->execute(array(
-    $post['task_name'],
-    $post['category_id'],
-    $post['task_detail'],
-    $post['datetime']
-));
 
 ?>
 <!DOCTYPE html>
@@ -50,16 +42,13 @@ $statement->execute(array(
 
     <section class="main">
         <div class="container">
-            <div class="category_name">
-                <span>カテゴリ名1 ：</span>
-            </div>
 
             <div class="addtask_area">
                 <div class="addtask_area_title">
-                    <h1>タスク編集</h1>
+                    <h1>タスク参照・編集</h1>
                 </div>
 
-                <form method="post" action="" id="addtask_forms">
+                <form method="post" action="modify_task_done.php" id="addtask_forms">
                     <div class="addtask_form datetime">
                         <span id="datetime_label">日時</span>
                         <input type="datetime-local" name="datetime" id="datetime" value="<?=date('Y-m-d\TH:i', strtotime($task['datetime']))?>">
@@ -74,7 +63,7 @@ $statement->execute(array(
                     </div>
 
                     <div class="addtask_submitbutton">
-                        <input type="submit" value="登録">
+                        <input type="submit" value="修正登録">
                     </div>
                 </form>
             </div>

@@ -11,14 +11,24 @@ if(!isset($_SESSION['id'])){
 
 $member['id'] = $_SESSION['id'];
 
+$bday = new DateTime();
+$today =  $bday->format('Y-m-d'); 
+
 $statement = $db->prepare('SELECT * FROM members WHERE id=?');
 $statement->execute(array($member['id']));
 $loginmember = $statement->fetch();
 
-$tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=?');
+$tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=? LIMIT 0, 5');
 $tasks->execute(array($loginmember['id']));
 
-$categories = $db->query('SELECT * FROM categories WHERE id=1');
+$tasks_today = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND date=? LIMIT 0, 3');
+$tasks_today->execute(array(
+    $loginmember['id'],
+    $today
+));
+
+$tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND DATE_ADD(date, INTERVAL 5 DAY) > NOW() LIMIT 0, 5');
+$tasks_recent->execute(array($loginmember['id']));
 
 
 ?>
@@ -118,24 +128,14 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
 
                         <div class="right_top_taskarea">
                             <div class="right_top_tasks">
+                            <?php while($task_today = $tasks_today->fetch()): ?>
                                 <div class="right_top_task">
-                                    <span class="right_top_time">13:00</span>
+                                    <span class="right_top_time"><?= $task_today['datetime'] ?></span>
 
-                                    <a href="" class="task_name">テキストが入ります。</a>
+                                    <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= $task_today['task_name'] ?></a>
                                 </div>
                                 <hr>
-                                <div class="right_top_task">
-                                    <span class="right_top_time">13:00</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
-                                <div class="right_top_task">
-                                    <span class="right_top_time">13:00</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
+                                <?php endwhile; ?>
                             </div>
                         </div>
                     </div>
@@ -146,36 +146,14 @@ $categories = $db->query('SELECT * FROM categories WHERE id=1');
 
                         <div class="right_bottom_taskarea">
                             <div class="right_bottom_tasks">
+                            <?php while($task_recent = $tasks_recent->fetch()): ?>
                                 <div class="right_bottom_task">
-                                    <span class="right_bottom_time">〇月〇日</span>
+                                    <span class="right_bottom_time"><?= $task_recent['date'] ?></span>
 
-                                    <a href="" class="task_name">テキストが入ります。</a>
+                                    <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= $task_recent['task_name'] ?></a>
                                 </div>
                                 <hr>
-                                <div class="right_bottom_task">
-                                    <span class="right_bottom_time">〇月〇日</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
-                                <div class="right_bottom_task">
-                                    <span class="right_bottom_time">〇月〇日</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
-                                <div class="right_bottom_task">
-                                    <span class="right_bottom_time">〇月〇日</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
-                                <div class="right_bottom_task">
-                                    <span class="right_bottom_time">〇月〇日</span>
-
-                                    <a href="" class="task_name">テキストが入ります。</a>
-                                </div>
-                                <hr>
+                                <?php endwhile; ?>
                             </div>
                         </div>
                     </div>
