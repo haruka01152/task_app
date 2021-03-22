@@ -9,6 +9,8 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+$week = ['日', '月', '火', '水', '木', '金', '土', '日'];
+
 $member['id'] = $_SESSION['id'];
 
 $bday = new DateTime();
@@ -18,17 +20,18 @@ $statement = $db->prepare('SELECT * FROM members WHERE id=?');
 $statement->execute(array($member['id']));
 $loginmember = $statement->fetch();
 
-$tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=? LIMIT 0, 5');
+$tasks = $db->prepare('SELECT * FROM tasks WHERE member_id=? ORDER BY id DESC LIMIT 0, 5');
 $tasks->execute(array($loginmember['id']));
 
-$tasks_today = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND date=? LIMIT 0, 3');
+$tasks_today = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND date=?ORDER BY datetime LIMIT 0, 3');
 $tasks_today->execute(array(
     $loginmember['id'],
     $today
 ));
 
-$tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND DATE_ADD(date, INTERVAL 5 DAY) > NOW() LIMIT 0, 5');
+$tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND DATE_ADD(date, INTERVAL 5 DAY) > NOW() ORDER BY datetime LIMIT 0, 5');
 $tasks_recent->execute(array($loginmember['id']));
+
 
 
 ?>
@@ -96,19 +99,19 @@ $tasks_recent->execute(array($loginmember['id']));
                         <div class="main_task_area main_task_area_show">
                                 <div class="main_task_area_title">
                                     <h1>すべてのタスク</h1>
-                                    <a href="add_task.php?category_id=<?php  ?>" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
+                                    <a href="add_task.php" class="add_task"><i class="fas fa-plus-circle fa-3x"></i></a>
                                 </div>
 
                                 <div class="main_tasks">
                                    <?php while($task = $tasks->fetch()): ?>
                                     <div class="main_task">
                                         <div class="main_task_left">
-                                            <span class="date"><?= $task['datetime'] ?></span>
+                                            <span class="date"><?= date("Y-m-d", strtotime($task['datetime'])) . '（' . $week[date("w", strtotime($task['datetime']))]. '）' . date("H:i", strtotime($task['datetime'])) ?></span>
                                             <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= $task['task_name'] ?></a>
                                         </div>
                                         
                                         <div class="main_task_right">
-                                            <a href="delete_task.php?task_id=<?= $task['id'] ?>" class="delete_task">削除×</a>
+                                            <a href="delete_task.php?task_id=<?= $task['id'] ?>" id="delete_task">削除×</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -130,7 +133,7 @@ $tasks_recent->execute(array($loginmember['id']));
                             <div class="right_top_tasks">
                             <?php while($task_today = $tasks_today->fetch()): ?>
                                 <div class="right_top_task">
-                                    <span class="right_top_time"><?= $task_today['datetime'] ?></span>
+                                    <span class="right_top_time"><?= date("H:i", strtotime($task_today['datetime'])) ?></span>
 
                                     <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= $task_today['task_name'] ?></a>
                                 </div>
@@ -148,7 +151,7 @@ $tasks_recent->execute(array($loginmember['id']));
                             <div class="right_bottom_tasks">
                             <?php while($task_recent = $tasks_recent->fetch()): ?>
                                 <div class="right_bottom_task">
-                                    <span class="right_bottom_time"><?= $task_recent['date'] ?></span>
+                                    <span class="right_bottom_time"><?= date("m-d", strtotime($task_recent['datetime'])). '（' . $week[date("w", strtotime($task_recent['datetime']))]. '）' ?></span>
 
                                     <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= $task_recent['task_name'] ?></a>
                                 </div>

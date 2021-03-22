@@ -164,7 +164,7 @@ header .container .logout_button a {
   color: #11aaa5;
 }
 
-.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right .delete_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area .main_tasks .main_task .main_task_right #delete_task {
   padding-left: 20px;
   color: #db3838;
 }
@@ -262,7 +262,7 @@ header .container .logout_button a {
   color: #11aaa5;
 }
 
-.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right .delete_task {
+.main .container .main_contents .main_contents_left .main_task_areas .main_task_area_show .main_tasks .main_task .main_task_right #delete_task {
   padding-left: 20px;
   color: #db3838;
 }
@@ -426,6 +426,33 @@ header .container .logout_button a {
 .main .container .addtask_area #addtask_forms .addtask_submitbutton input {
   padding: 10px 90px;
   margin-top: 40px;
+}
+
+.main .container .addtask_area #addtask_forms .addtask_submitbutton .modify_delete_task {
+  padding-left: 20px;
+  color: #db3838;
+}
+
+.main .container .addtask_area #addtask_forms .modify_addtask_submitbutton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main .container .addtask_area #addtask_forms .modify_addtask_submitbutton input {
+  padding: 10px 90px;
+  margin: 40px 50px 0 0;
+}
+
+.main .container .addtask_area #addtask_forms .modify_addtask_submitbutton .modify_delete_task {
+  margin: 14px 0;
+  color: #db3838;
 }
 
 .main .container .goto_topbutton {

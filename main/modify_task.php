@@ -62,8 +62,9 @@ $task = $tasks->fetch();
                         <textarea name="task_detail" id="task_detail" cols="30" rows="10"><?= $task['task_detail']; ?></textarea>
                     </div>
 
-                    <div class="addtask_submitbutton">
+                    <div class="modify_addtask_submitbutton">
                         <input type="submit" value="修正登録">
+                        <a href="delete_task.php?task_id=<?= $_REQUEST['task_id'] ?>" class="modify_delete_task">削除×</a>
                     </div>
                 </form>
             </div>

@@ -164,7 +164,7 @@ header {
                                         color: #11aaa5;
                                     }
 
-                                    .delete_task {
+                                    #delete_task {
                                         padding-left: 20px;
                                         color: #db3838;
                                     }
@@ -244,7 +244,7 @@ header {
                                         color: #11aaa5;
                                     }
 
-                                    .delete_task {
+                                    #delete_task {
                                         padding-left: 20px;
                                         color: #db3838;
                                     }
@@ -391,6 +391,27 @@ header {
                     input {
                         padding: 10px 90px;
                         margin-top: 40px;
+                    }
+
+                    .modify_delete_task{
+                        padding-left: 20px;
+                        color: #db3838;
+                    }
+                }
+
+                .modify_addtask_submitbutton {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+
+                    input {
+                        padding: 10px 90px;
+                        margin:40px 50px 0 0;
+                    }
+
+                    .modify_delete_task{
+                        margin: 14px 0;
+                        color: #db3838;
                     }
                 }
             }
