@@ -74,19 +74,19 @@ $tasks_recent->execute(array($loginmember['id']));
             <div class="colormode">
                 <span>カラーモード選択</span>
                 <form class="colors" method="post" action="">
-                    <div class="color simple" id="simpleblock" onclick="changeColor('simpleblock')">
+                    <div class="color simple" onclick="changeColor('simpleblock')">
                         <input type="radio" name="colormode" id="simple" value="simple" checked>
                         <label for="simple">シンプル</label>
                     </div>
-                    <div class="color natural" id="naturalblock">
+                    <div class="color natural">
                         <input type="radio" name="colormode" id="natural" value="natural">
                         <label for="natural">ナチュラル</label>
                     </div>
-                    <div class="color dark" id="darkblock">
+                    <div class="color dark">
                         <input type="radio" name="colormode" id="dark" value="dark">
                         <label for="dark">ダーク</label>
                     </div>
-                    <div class="color cute" id="cuteblock">
+                    <div class="color cute">
                         <input type="radio" name="colormode" id="cute" value="cute">
                         <label for="cute">キュート</label>
                     </div>

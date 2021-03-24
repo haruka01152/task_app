@@ -19,6 +19,10 @@ if(!empty($_POST)){
         $error['task_name'] = 'blank';
     }
 
+    if(strlen($_POST['task_name']) >= 50){
+        $error['task_name'] = 'length';
+    } 
+
     if(empty($error)){
         $_SESSION['datetime'] = $_POST['datetime'];
         $_SESSION['task_name'] = $_POST['task_name'];
@@ -78,6 +82,9 @@ if(!empty($_POST)){
                     </div>
                     <?php if($error['task_name'] === 'blank'): ?>
                         <p class="error addtask_error">* タスク名を入力してください</p>
+                        <?php endif; ?>
+                        <?php if($error['task_name'] === 'length'): ?>
+                        <p class="error addtask_error">* タスク名が長すぎます。50文字以下で入力してください。</p>
                         <?php endif; ?>
                     <?php if($error['datetime'] === 'blank'): ?>
                         <p class="error addtask_error">* 日時を入力してください</p>
