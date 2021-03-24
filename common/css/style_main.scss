@@ -38,7 +38,29 @@ header {
         height: 80px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
+
+        .colormode{
+            color:rgb(109, 87, 54);
+            font-size: 13px;
+
+            span{
+                display: block;
+                padding: 0 0 10px 8px;
+            }
+
+            .colors{
+                display: flex;
+
+                .color{
+                    padding: 0 5px;
+                }
+
+                #colormodesubmit{
+                    margin: -5px 0 0 10px;
+                }
+            }
+        }
 
         .logout_button {
             background: rgba(255, 255, 255, 0.705);
@@ -74,38 +96,38 @@ header {
             .main_contents_left {
                 display: flex;
 
-                // .main_task_tabarea {
-                //     margin-top: 30px;
-                //     position: relative;
+                .main_task_tabarea {
+                    margin-top: 30px;
+                    position: relative;
 
-                //     .tab {
-                //         cursor: pointer;
-                //         background: #fff;
-                //         font-size: 18px;
-                //         border-radius: 20px;
-                //         box-shadow: 0px 1px 3px gray;
-                //         padding: 20px 60px;
-                //         margin-bottom: 20px;
-                //         transition: all .3s;
-                //     }
+                    .tab {
+                        cursor: pointer;
+                        background: #fff;
+                        font-size: 18px;
+                        border-radius: 20px;
+                        box-shadow: 0px 1px 3px gray;
+                        padding: 20px 60px;
+                        margin-bottom: 20px;
+                        transition: all .3s;
+                    }
 
-                //     .tab-active {
-                //         color: #fff;
-                //         background: #93da7e;
-                //         transform: scale(1.2, 1.2);
-                //     }
+                    .tab-active {
+                        color: #fff;
+                        background: #93da7e;
+                        transform: scale(1.2, 1.2);
+                    }
 
-                //     .change_category_button {
-                //         background: #93da7e;
-                //         color: #fff;
-                //         padding: 15px 10px;
-                //         box-shadow: 0px 1px 3px gray;
-                //         border-radius: 20px;
-                //         position: absolute;
-                //         right: 28px;
-                //         bottom: 30px;
-                //     }
-                // }
+                    .change_category_button {
+                        background: #93da7e;
+                        color: #fff;
+                        padding: 15px 10px;
+                        box-shadow: 0px 1px 3px gray;
+                        border-radius: 20px;
+                        position: absolute;
+                        right: 25px;
+                        bottom: 30px;
+                    }
+                }
 
                 .main_task_areas {
                     .main_task_area {

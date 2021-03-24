@@ -11,12 +11,15 @@ if(!isset($_SESSION['id'])){
 
 $updates = $db->prepare('UPDATE tasks SET task_name=?, task_detail=?, date=?, datetime=? WHERE id=?');
 $updates->execute(array(
-    $_POST['task_name'],
-    $_POST['task_detail'],
-    $_POST['datetime'],
-    $_POST['datetime'],
+    $_SESSION['task_name'],
+    $_SESSION['task_detail'],
+    $_SESSION['datetime'],
+    $_SESSION['datetime'],
     $_SESSION['task_id']
 ));
+
+unset($_SESSION['task_name'], $_SESSION['task_detail'], $_SESSION['datetime']);
+
 
 ?>
 <!DOCTYPE html>

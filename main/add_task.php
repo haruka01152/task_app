@@ -9,7 +9,6 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
-
 if(!empty($_POST)){
 
     if($_POST['datetime'] == ''){
@@ -21,6 +20,10 @@ if(!empty($_POST)){
     }
 
     if(empty($error)){
+        $_SESSION['datetime'] = $_POST['datetime'];
+        $_SESSION['task_name'] = $_POST['task_name'];
+        $_SESSION['task_detail'] = $_POST['task_detail'];
+
         header('Location: add_task_done.php');
         exit();
     }

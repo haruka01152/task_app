@@ -15,6 +15,26 @@ $tasks = $db->prepare('SELECT * FROM tasks WHERE id=?');
 $tasks->execute(array($_REQUEST['task_id']));
 $task = $tasks->fetch();
 
+if(!empty($_POST)){
+
+    if($_POST['datetime'] == ''){
+        $error['datetime'] = 'blank';
+    }
+
+    if($_POST['task_name'] == ''){
+        $error['task_name'] = 'blank';
+    }
+
+    if(empty($error)){
+        $_SESSION['datetime'] = $_POST['datetime'];
+        $_SESSION['task_name'] = $_POST['task_name'];
+        $_SESSION['task_detail'] = $_POST['task_detail'];
+
+        header('Location: modify_task_done.php');
+        exit();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -48,7 +68,7 @@ $task = $tasks->fetch();
                     <h1>タスク参照・編集</h1>
                 </div>
 
-                <form method="post" action="modify_task_done.php" id="addtask_forms">
+                <form method="post" action="" id="addtask_forms">
                     <div class="addtask_form datetime">
                         <span id="datetime_label">日時</span>
                         <input type="datetime-local" name="datetime" id="datetime" value="<?=date('Y-m-d\TH:i', strtotime($task['datetime']))?>">
@@ -62,6 +82,12 @@ $task = $tasks->fetch();
                         <textarea name="task_detail" id="task_detail" cols="30" rows="10"><?= $task['task_detail']; ?></textarea>
                     </div>
 
+                    <?php if($error['datetime'] === 'blank'): ?>
+                        <p class="error addtask_error">* 日時を入力してください</p>
+                        <?php endif; ?>
+                        <?php if($error['task_name'] === 'blank'): ?>
+                        <p class="error addtask_error">* タスク名を入力してください</p>
+                        <?php endif; ?>
                     <div class="modify_addtask_submitbutton">
                         <input type="submit" value="修正登録">
                         <a href="delete_task.php?task_id=<?= $_REQUEST['task_id'] ?>" class="modify_delete_task">削除×</a>

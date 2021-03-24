@@ -20,7 +20,8 @@ $statement = $db->prepare('SELECT * FROM members WHERE id=?');
 $statement->execute(array($member['id']));
 $loginmember = $statement->fetch();
 
-$counts = $db->query('SELECT COUNT(*) as cnt FROM tasks');
+$sql_forcount = 'SELECT COUNT(*) as cnt FROM tasks WHERE member_id=' . $member['id'];
+$counts = $db->query($sql_forcount);
 $count = $counts->fetch();
 $max_page = ceil($count['cnt'] / 5);
 
@@ -49,10 +50,8 @@ $tasks_today->execute(array(
     $today
 ));
 
-$tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND DATE_ADD(date, INTERVAL 5 DAY) > NOW() ORDER BY datetime LIMIT 0, 5');
+$tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND datetime > CURDATE()+1 AND CURDATE()+4 > datetime ORDER BY datetime LIMIT 0, 5');
 $tasks_recent->execute(array($loginmember['id']));
-
-
 
 ?>
 <!DOCTYPE html>
@@ -72,6 +71,36 @@ $tasks_recent->execute(array($loginmember['id']));
 
     <header>
         <div class="container">
+            <div class="colormode">
+                <span>カラーモード選択</span>
+                <form class="colors" method="post" action="">
+                    <div class="color simple" id="simpleblock" onclick="changeColor('simpleblock')">
+                        <input type="radio" name="colormode" id="simple" value="simple" checked>
+                        <label for="simple">シンプル</label>
+                    </div>
+                    <div class="color natural" id="naturalblock">
+                        <input type="radio" name="colormode" id="natural" value="natural">
+                        <label for="natural">ナチュラル</label>
+                    </div>
+                    <div class="color dark" id="darkblock">
+                        <input type="radio" name="colormode" id="dark" value="dark">
+                        <label for="dark">ダーク</label>
+                    </div>
+                    <div class="color cute" id="cuteblock">
+                        <input type="radio" name="colormode" id="cute" value="cute">
+                        <label for="cute">キュート</label>
+                    </div>
+                    <input type="submit" id="colormodesubmit" name="colormodesubmit" value="OK">
+                </form>
+
+                <script>
+                    function changeColor(idname){
+                        let obj = document.getElementById(idname);
+                        obj.style.color = '#fff';
+                        obj.style.backgroundColor = '#000';
+                    }
+                </script>
+            </div>
             <div class="logout_button">
                 <a href="logout.php">ログアウト</a>
             </div>
@@ -94,21 +123,7 @@ $tasks_recent->execute(array($loginmember['id']));
                         <div class="tab">
                             <span>tab2</span>
                         </div>
-                        <div class="tab">
-                            <span>tab3</span>
-                        </div>
-                        <div class="tab">
-                            <span>tab4</span>
-                        </div>
-                        <div class="tab">
-                            <span>tab5</span>
-                        </div>
-                        <div class="tab">
-                            <span>tab6</span>
-                        </div>
-                        <div class="tab">
-                            <span>tab7</span>
-                        </div>
+                        
 
                         <a href="modify_category.php" class="change_category_button">カテゴリ編集</a>
                         <input type="hidden" name="category_id" value="">
@@ -127,7 +142,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="main_task">
                                         <div class="main_task_left">
                                             <span class="date"><?= date("Y-m-d", strtotime($task['datetime'])) . '（' . $week[date("w", strtotime($task['datetime']))] . '）' . date("H:i", strtotime($task['datetime'])) ?></span>
-                                            <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= $task['task_name'] ?></a>
+                                            <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= htmlspecialchars($task['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
                                         </div>
 
                                         <div class="main_task_right">
@@ -161,7 +176,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="right_top_task">
                                         <span class="right_top_time"><?= date("H:i", strtotime($task_today['datetime'])) ?></span>
 
-                                        <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= $task_today['task_name'] ?></a>
+                                        <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= htmlspecialchars($task_today['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
                                     </div>
                                     <hr>
                                 <?php endwhile; ?>
@@ -180,7 +195,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="right_bottom_task">
                                         <span class="right_bottom_time"><?= date("m-d", strtotime($task_recent['datetime'])) . '（' . $week[date("w", strtotime($task_recent['datetime']))] . '）' ?></span>
 
-                                        <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= $task_recent['task_name'] ?></a>
+                                        <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= htmlspecialchars($task_recent['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
                                     </div>
                                     <hr>
                                 <?php endwhile; ?>

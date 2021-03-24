@@ -14,11 +14,13 @@ $member['id'] = $_SESSION['id'];
 $statement = $db->prepare('INSERT INTO tasks SET member_id=?,task_name=?,task_detail=?, date=?, datetime=?');
 $statement->execute(array(
     $member['id'],
-    $_POST['task_name'],
-    $_POST['task_detail'],
-    $_POST['datetime'],
-    $_POST['datetime']
+    $_SESSION['task_name'],
+    $_SESSION['task_detail'],
+    $_SESSION['datetime'],
+    $_SESSION['datetime']
 ));
+
+unset($_SESSION['task_name'], $_SESSION['task_detail'], $_SESSION['datetime']);
 
 ?>
 <!DOCTYPE html>
