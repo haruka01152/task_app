@@ -419,6 +419,10 @@ header .container .logout_button a {
   resize: none;
 }
 
+.main .container .addtask_area #addtask_forms .addtask_error {
+  text-align: center;
+}
+
 .main .container .addtask_area #addtask_forms .addtask_submitbutton {
   text-align: center;
 }

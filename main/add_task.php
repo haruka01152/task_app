@@ -9,6 +9,23 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+
+if(!empty($_POST)){
+
+    if($_POST['datetime'] == ''){
+        $error['datetime'] = 'blank';
+    }
+
+    if($_POST['task_name'] == ''){
+        $error['task_name'] = 'blank';
+    }
+
+    if(empty($error)){
+        header('Location: add_task_done.php');
+        exit();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,20 +59,26 @@ if(!isset($_SESSION['id'])){
                     <h1>タスク追加</h1>
                 </div>
 
-                <form method="post" action="add_task_done.php" id="addtask_forms">
+                <form method="post" action="" id="addtask_forms">
                     <div class="addtask_form datetime">
                         <span id="datetime_label">日時</span>
-                        <input type="datetime-local" name="datetime" id="datetime">
+                        <input type="datetime-local" name="datetime" id="datetime" value="<?= $_POST['datetime'] ?>">
                     </div>
+
                     <div class="addtask_form task_name">
                         <span id="task_name_label">タスク名</span>
-                        <input type="text" name="task_name" id="task_name">
+                        <input type="text" name="task_name" id="task_name" value="<?= $_POST['task_name'] ?>">
                     </div>
                     <div class="addtask_form detail">
                         <span id="task_detail_label">詳細メモ</span>
-                        <textarea name="task_detail" id="task_detail" cols="30" rows="10"></textarea>
+                        <textarea name="task_detail" id="task_detail" cols="30" rows="10"><?= $_POST['task_detail'] ?></textarea>
                     </div>
-
+                    <?php if($error['task_name'] === 'blank'): ?>
+                        <p class="error addtask_error">* タスク名を入力してください</p>
+                        <?php endif; ?>
+                    <?php if($error['datetime'] === 'blank'): ?>
+                        <p class="error addtask_error">* 日時を入力してください</p>
+                        <?php endif; ?>
                     <div class="addtask_submitbutton">
                         <input type="submit" value="登録">
                     </div>

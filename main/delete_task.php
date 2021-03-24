@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_regenerate_id(true);
 
 require_once '../common/dbconnect.php';
 
@@ -8,6 +7,7 @@ if(!isset($_SESSION['id'])){
     header('Location: ../index.php');
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
