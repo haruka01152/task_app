@@ -1,0 +1,61 @@
+    *{
+        color:#fff !important;
+    }
+
+    .date{
+        background:#3e4147 !important;
+    }
+
+    .addtask_area input,textarea{
+        color:#293045 !important;
+    }
+
+    .addtask_area input,textarea{
+        color:#293045 !important;
+    }
+
+    header,footer{
+        background:#293045;
+    }
+
+    .main{
+        background-image:url(../img/hoshizora.jpg);
+    }
+
+    .main_task_area,.right_top_taskarea,.right_bottom_taskarea{
+        background:#293045 !important;
+    }
+
+    .addtask_area{
+        background:#293045 !important;
+    }
+
+    .addtask_submitbutton input{
+        background:#576078 !important;
+        color: white !important;
+    }
+
+    .modify_addtask_submitbutton input{
+        background:#576078 !important;
+        color: white !important;
+    }
+
+    .fa-lightbulb,.fa-exclamation{
+        background:transparent !important;
+    }
+
+    #delete_task{
+        color: #db3838 !important;
+    }
+
+    .logout_button{
+        background:#576078 !important;
+    }
+
+    .goto_topbutton a{
+        background:#576078 !important;
+    }
+
+    #colormodesubmit{
+        background:#576078 !important;
+    }

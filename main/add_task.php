@@ -9,6 +9,10 @@ if(!isset($_SESSION['id'])){
     exit();
 }
 
+$statement = $db->prepare('SELECT * FROM members WHERE id=?');
+$statement->execute(array($_SESSION['id']));
+$loginmember = $statement->fetch();
+
 if(!empty($_POST)){
 
     if($_POST['datetime'] == ''){
@@ -44,6 +48,13 @@ if(!empty($_POST)){
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> 
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style_main.css">
+    <?php if($loginmember['colormode'] === '1'): ?>
+    <link rel="stylesheet" href="../common/css/colormode1.css">
+    <?php elseif($loginmember['colormode'] === '3'): ?>
+    <link rel="stylesheet" href="../common/css/colormode3.css">
+    <?php elseif($loginmember['colormode'] === '4'): ?>
+    <link rel="stylesheet" href="../common/css/colormode4.css">
+    <?php endif; ?>
     <title>タスク追加 | タスク管理</title>
 </head>
 

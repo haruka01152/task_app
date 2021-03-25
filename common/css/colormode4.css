@@ -1,0 +1,41 @@
+    *{
+        color:#c49c66 !important;
+    }
+
+    .date{
+        background:#ffe8ef !important;
+    }
+
+    header,footer{
+        background:#ffe8ef;
+    }
+
+    .addtask_submitbutton input{
+        background:#c49c66 !important;
+        color:white !important;
+        border:none;
+    }
+
+    .modify_addtask_submitbutton input{
+        background:#c49c66 !important;
+        color:white !important;
+        border:none;
+    }
+
+    .goto_topbutton a{
+        background:#c49c66 !important;
+        color:white !important;
+    }
+
+    .main{
+        background-image:url(../img/cute.jpg);
+    }
+
+    .fa-lightbulb,.fa-exclamation{
+        background:transparent !important;
+    }
+
+    #delete_task{
+        color: #db3838 !important;
+    }
+

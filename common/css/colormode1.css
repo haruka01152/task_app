@@ -1,0 +1,32 @@
+*{
+    color:#3b3b3b !important;
+}
+
+.date{
+    background:lightgray !important;
+}
+
+.goto_topbutton a{
+    background:lightgray !important;
+}
+
+header,footer{
+    background:#fff;
+}
+
+.main{
+    background-image:none;
+    background-color:#e8e8e8;
+}
+
+.fa-lightbulb,.fa-exclamation{
+    background:white !important;
+}
+
+#delete_task{
+    color: #db3838 !important;
+}
+
+.logout_button{
+    background:lightgray !important;
+}

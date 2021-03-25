@@ -7,6 +7,10 @@ body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
+.sp-br {
+  display: none;
+}
+
 .error {
   padding-top: 10px;
   color: red;
@@ -80,6 +84,10 @@ header .container .logout_button a {
   display: inline-block;
   color: #6d5736;
   padding: 10px 20px;
+}
+
+header .container .menu {
+  display: none;
 }
 
 .main {
@@ -555,5 +563,171 @@ footer .container {
 footer .container span {
   color: #fff;
   font-size: 11px;
+}
+
+@media screen and (max-width: 1160px) {
+  .sp-br {
+    display: block;
+  }
+  .main_tasks {
+    width: 400px !important;
+  }
+  .right_bottom_taskarea {
+    margin-top: 12px !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main_contents {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main_contents .main_contents_left {
+    padding-left: 10px;
+  }
+  .main_contents .main_contents_left .main_task_areas {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .main_contents .main_contents_left .main_task_areas .main_tasks {
+    width: 95% !important;
+  }
+  .main_contents .main_contents_right {
+    width: 95% !important;
+    margin: 80px auto;
+  }
+  .main_contents .main_contents_right .right_top_taskarea, .main_contents .main_contents_right .right_bottom_taskarea {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sp-br {
+    display: none;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+  }
+  header .colormode, header .logout_button {
+    display: none;
+  }
+  header .menu {
+    display: block !important;
+  }
+  header .menu .menu_icon {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 25px;
+    margin-top: -10px;
+  }
+  header .menu .menu_icon span {
+    border-bottom: 1px solid gray;
+    margin-top: -3px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  header .menu .menu_icon.open span {
+    border-bottom: 1px solid gray;
+    margin-top: -3px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  header .menu .menu_icon.open span:first-child {
+    -webkit-transform: translate(10px, 13px) rotate(45deg);
+            transform: translate(10px, 13px) rotate(45deg);
+  }
+  header .menu .menu_icon.open span:nth-child(2) {
+    display: none;
+  }
+  header .menu .menu_icon.open span:last-child {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  header .menu .menu_lists {
+    background: white;
+    position: absolute;
+    top: 80px;
+    left: -230px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px 20px 30px 20px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  header .menu .menu_lists form, header .menu .menu_lists .logout_botton_sp {
+    padding: 20px;
+  }
+  header .menu .menu_lists form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .menu .menu_lists form span {
+    padding-bottom: 40px;
+  }
+  header .menu .menu_lists form button {
+    padding: 20px 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background: #e4e4e4;
+    border: none;
+  }
+  header .menu .menu_lists .logout_button_sp {
+    margin-top: 15px;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 30px;
+    background: #aaeaff;
+  }
+  header .menu .menu_lists.show {
+    -webkit-transform: translateX(230px);
+            transform: translateX(230px);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .main {
+    padding: 10px;
+  }
+  .main .main_contents .main_contents_left {
+    margin-left: 5px;
+  }
+  .main .main_contents .main_contents_left .main_task_areas {
+    width: 100%;
+  }
+  .main .main_contents .main_contents_left .main_task_areas .main_tasks {
+    width: 100% !important;
+  }
+  .main .main_contents .main_contents_right {
+    width: 100% !important;
+  }
 }
 /*# sourceMappingURL=style_main.css.map */

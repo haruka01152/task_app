@@ -67,6 +67,13 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/style_main.css">
+    <?php if ($loginmember['colormode'] === '1') : ?>
+        <link rel="stylesheet" href="../common/css/colormode1.css">
+    <?php elseif ($loginmember['colormode'] === '3') : ?>
+        <link rel="stylesheet" href="../common/css/colormode3.css">
+    <?php elseif ($loginmember['colormode'] === '4') : ?>
+        <link rel="stylesheet" href="../common/css/colormode4.css">
+    <?php endif; ?>
     <title>トップ | タスク管理</title>
 </head>
 
@@ -78,132 +85,50 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
                 <span>カラーモード選択</span>
                 <form class="colors" method="post" action="colormode.php">
                     <div class="color simple">
-                        <input type="radio" name="colormode" id="simple" value="simple"<?php if($loginmember['colormode'] === '1'): ?> checked<?php endif; ?>>
+                        <input type="radio" name="colormode" id="simple" value="simple" <?php if ($loginmember['colormode'] === '1') : ?> checked<?php endif; ?>>
                         <label for="simple">シンプル</label>
                     </div>
                     <div class="color natural">
-                        <input type="radio" name="colormode" id="natural" value="natural"<?php if($loginmember['colormode'] === '2'): ?> checked<?php endif; ?>>
+                        <input type="radio" name="colormode" id="natural" value="natural" <?php if ($loginmember['colormode'] === '2') : ?> checked<?php endif; ?>>
                         <label for="natural">ナチュラル</label>
                     </div>
                     <div class="color dark">
-                        <input type="radio" name="colormode" id="dark" value="dark"<?php if($loginmember['colormode'] === '3'): ?> checked<?php endif; ?>>
+                        <input type="radio" name="colormode" id="dark" value="dark" <?php if ($loginmember['colormode'] === '3') : ?> checked<?php endif; ?>>
                         <label for="dark">ダーク</label>
                     </div>
                     <div class="color cute">
-                        <input type="radio" name="colormode" id="cute" value="cute"<?php if($loginmember['colormode'] === '4'): ?> checked<?php endif; ?>>
+                        <input type="radio" name="colormode" id="cute" value="cute" <?php if ($loginmember['colormode'] === '4') : ?> checked<?php endif; ?>>
                         <label for="cute">キュート</label>
                     </div>
                     <input type="submit" id="colormodesubmit" name="colormodesubmit" value="OK">
                 </form>
-
-                <?php if($loginmember['colormode'] === '1'): ?>
-                    <style>
-                        *{
-                            color:#3b3b3b !important;
-                        }
-
-                        .date{
-                            background:lightgray !important;
-                        }
-
-                        header,footer{
-                            background:#fff;
-                        }
-
-                        .main{
-                            background-image:none;
-                            background-color:#e8e8e8;
-                        }
-
-                        .fa-lightbulb,.fa-exclamation{
-                            background:white !important;
-                        }
-
-                        #delete_task{
-                            color: #db3838 !important;
-                        }
-
-                        .logout_button{
-                            background:lightgray !important;
-                        }
-                    </style>
-                <?php endif; ?>
-
-                <?php if($loginmember['colormode'] === '3'): ?>
-                    <style>
-                        *{
-                            color:#fff !important;
-                        }
-
-                        .date{
-                            background:#3e4147 !important;
-                        }
-
-                        header,footer{
-                            background:#293045;
-                        }
-
-                        .main{
-                            background-image:url(../common/img/hoshizora.jpg);
-                        }
-
-                        .main_task_area,.right_top_taskarea,.right_bottom_taskarea{
-                            background:#293045 !important;
-                        }
-
-                        .fa-lightbulb,.fa-exclamation{
-                            background:transparent !important;
-                        }
-
-                        #delete_task{
-                            color: #db3838 !important;
-                        }
-
-                        .logout_button{
-                            background:#576078 !important;
-                        }
-
-                        #colormodesubmit{
-                            background:#576078 !important;
-                        }
-                    </style>
-                <?php endif; ?>
-
-                <?php if($loginmember['colormode'] === '4'): ?>
-                    <style>
-                        *{
-                            color:#c49c66 !important;
-                        }
-
-                        .date{
-                            background:#ffe8ef !important;
-                        }
-
-                        header,footer{
-                            background:#ffe8ef;
-                        }
-
-                        .main{
-                            background-image:url(../common/img/cute.jpg)
-                        }
-
-                        .fa-lightbulb,.fa-exclamation{
-                            background:transparent !important;
-                        }
-
-                        #delete_task{
-                            color: #db3838 !important;
-                        }
-
-                    </style>
-                <?php endif; ?>
             </div>
             <div class="logout_button">
                 <a href="logout.php">ログアウト</a>
             </div>
+
+            <div class="menu">
+                <div class="menu_icon" id=menu_icon>
+                    <span>　　　</span>
+                    <span>　　　</span>
+                    <span>　　　</span>
+                </div>
+
+                <div class="menu_lists" id=menu_lists>
+                    <form action="colormode.php" method="post">
+                        <span>カラーモード選択：</span>
+                        <button type="submit" value="simple">シンプル</button>
+                        <button type="submit" value="natural">ナチュラル</button>
+                        <button type="submit" value="dark">ダーク</button>
+                        <button type="submit" value="cute">キュート</button>
+                    </form>
+                    <div class="logout_button_sp">
+                        <a href="logout.php">ログアウト</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
-
 
     <section class="main">
         <div class="container">
@@ -213,20 +138,6 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
 
             <section class="main_contents">
                 <div class="main_contents_left">
-                    <!-- <div class="main_task_tabarea">
-                        <div class="tab tab-active">
-                            <span>tab1</span>
-                        </div>
-                        <div class="tab">
-                            <span>tab2</span>
-                        </div>
-                        
-
-                        <a href="modify_category.php" class="change_category_button">カテゴリ編集</a>
-                        <input type="hidden" name="category_id" value="">
-
-                    </div> -->
-
                     <div class="main_task_areas">
                         <div class="main_task_area main_task_area_show">
                             <div class="main_task_area_title">
@@ -283,7 +194,7 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
                     <div class="main_contents_right_bottom">
                         <div class="main_contents_right_bottom_title">
                             <i class="fas fa-exclamation fa-2x"></i>
-                            <h3>もうすぐしめきりのご予定</h3>
+                            <h3>もうすぐしめきりの<br class="sp-br">ご予定</h3>
                         </div>
 
                         <div class="right_bottom_taskarea">
@@ -304,7 +215,6 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
         </div>
     </section>
 
-
     <footer id="footer">
         <div class="container">
             <div class="copyright">
@@ -313,19 +223,16 @@ $_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
         </div>
     </footer>
 
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
-    $(function() {
-  let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
-  $(".tab").on("click", function() { // tabをクリックしたらイベント発火
-    $(".tab-active").removeClass("tab-active"); // activeクラスを消す
-    $(this).addClass("tab-active"); // クリックした箇所にactiveクラスを追加
-    const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
-    $(".main_task_area").removeClass("main_task_area_show").eq(index).addClass("main_task_area_show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
-  })
-})
-</script> -->
+        let menuicon = document.getElementById("menu_icon");
+
+        menuicon.addEventListener("click", function() {
+            let menulist = document.getElementById('menu_lists');
+            menulist.classList.toggle('show');
+            menuicon.classList.toggle('open');
+        });
+
+    </script>
 
 </body>
 
