@@ -33,7 +33,6 @@ if (isset($_GET['page']) && is_numeric($_GET['page'])) {
         header('Location: index.php');
         exit();
     }
-
 } else {
     $page = 1;
 }
@@ -53,6 +52,10 @@ $tasks_today->execute(array(
 $tasks_recent = $db->prepare('SELECT * FROM tasks WHERE member_id=? AND datetime > CURDATE()+1 AND CURDATE()+4 > datetime ORDER BY datetime LIMIT 0, 5');
 $tasks_recent->execute(array($loginmember['id']));
 
+//カラーモード選択ファイルへ持っていく値
+$_SESSION['loginmember']['user_id'] = $loginmember['user_id'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -69,37 +72,131 @@ $tasks_recent->execute(array($loginmember['id']));
 
 <body>
 
-    <header>
+    <header id="header">
         <div class="container">
             <div class="colormode">
                 <span>カラーモード選択</span>
-                <form class="colors" method="post" action="">
-                    <div class="color simple" onclick="changeColor('simpleblock')">
-                        <input type="radio" name="colormode" id="simple" value="simple" checked>
+                <form class="colors" method="post" action="colormode.php">
+                    <div class="color simple">
+                        <input type="radio" name="colormode" id="simple" value="simple"<?php if($loginmember['colormode'] === '1'): ?> checked<?php endif; ?>>
                         <label for="simple">シンプル</label>
                     </div>
                     <div class="color natural">
-                        <input type="radio" name="colormode" id="natural" value="natural">
+                        <input type="radio" name="colormode" id="natural" value="natural"<?php if($loginmember['colormode'] === '2'): ?> checked<?php endif; ?>>
                         <label for="natural">ナチュラル</label>
                     </div>
                     <div class="color dark">
-                        <input type="radio" name="colormode" id="dark" value="dark">
+                        <input type="radio" name="colormode" id="dark" value="dark"<?php if($loginmember['colormode'] === '3'): ?> checked<?php endif; ?>>
                         <label for="dark">ダーク</label>
                     </div>
                     <div class="color cute">
-                        <input type="radio" name="colormode" id="cute" value="cute">
+                        <input type="radio" name="colormode" id="cute" value="cute"<?php if($loginmember['colormode'] === '4'): ?> checked<?php endif; ?>>
                         <label for="cute">キュート</label>
                     </div>
                     <input type="submit" id="colormodesubmit" name="colormodesubmit" value="OK">
                 </form>
 
-                <script>
-                    function changeColor(idname){
-                        let obj = document.getElementById(idname);
-                        obj.style.color = '#fff';
-                        obj.style.backgroundColor = '#000';
-                    }
-                </script>
+                <?php if($loginmember['colormode'] === '1'): ?>
+                    <style>
+                        *{
+                            color:#3b3b3b !important;
+                        }
+
+                        .date{
+                            background:lightgray !important;
+                        }
+
+                        header,footer{
+                            background:#fff;
+                        }
+
+                        .main{
+                            background-image:none;
+                            background-color:#e8e8e8;
+                        }
+
+                        .fa-lightbulb,.fa-exclamation{
+                            background:white !important;
+                        }
+
+                        #delete_task{
+                            color: #db3838 !important;
+                        }
+
+                        .logout_button{
+                            background:lightgray !important;
+                        }
+                    </style>
+                <?php endif; ?>
+
+                <?php if($loginmember['colormode'] === '3'): ?>
+                    <style>
+                        *{
+                            color:#fff !important;
+                        }
+
+                        .date{
+                            background:#3e4147 !important;
+                        }
+
+                        header,footer{
+                            background:#293045;
+                        }
+
+                        .main{
+                            background-image:url(../common/img/hoshizora.jpg);
+                        }
+
+                        .main_task_area,.right_top_taskarea,.right_bottom_taskarea{
+                            background:#293045 !important;
+                        }
+
+                        .fa-lightbulb,.fa-exclamation{
+                            background:transparent !important;
+                        }
+
+                        #delete_task{
+                            color: #db3838 !important;
+                        }
+
+                        .logout_button{
+                            background:#576078 !important;
+                        }
+
+                        #colormodesubmit{
+                            background:#576078 !important;
+                        }
+                    </style>
+                <?php endif; ?>
+
+                <?php if($loginmember['colormode'] === '4'): ?>
+                    <style>
+                        *{
+                            color:#c49c66 !important;
+                        }
+
+                        .date{
+                            background:#ffe8ef !important;
+                        }
+
+                        header,footer{
+                            background:#ffe8ef;
+                        }
+
+                        .main{
+                            background-image:url(../common/img/cute.jpg)
+                        }
+
+                        .fa-lightbulb,.fa-exclamation{
+                            background:transparent !important;
+                        }
+
+                        #delete_task{
+                            color: #db3838 !important;
+                        }
+
+                    </style>
+                <?php endif; ?>
             </div>
             <div class="logout_button">
                 <a href="logout.php">ログアウト</a>
@@ -142,7 +239,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="main_task">
                                         <div class="main_task_left">
                                             <span class="date"><?= date("Y-m-d", strtotime($task['datetime'])) . '（' . $week[date("w", strtotime($task['datetime']))] . '）' . date("H:i", strtotime($task['datetime'])) ?></span>
-                                            <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= htmlspecialchars($task['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
+                                            <a href="modify_task.php?task_id=<?= $task['id'] ?>" class="task_name"><?= htmlspecialchars($task['task_name'], ENT_QUOTES | ENT_HTML5); ?></a>
                                         </div>
 
                                         <div class="main_task_right">
@@ -176,7 +273,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="right_top_task">
                                         <span class="right_top_time"><?= date("H:i", strtotime($task_today['datetime'])) ?></span>
 
-                                        <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= htmlspecialchars($task_today['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
+                                        <a href="modify_task.php?task_id=<?= $task_today['id'] ?>" class="task_name"><?= htmlspecialchars($task_today['task_name'], ENT_QUOTES | ENT_HTML5); ?></a>
                                     </div>
                                     <hr>
                                 <?php endwhile; ?>
@@ -195,7 +292,7 @@ $tasks_recent->execute(array($loginmember['id']));
                                     <div class="right_bottom_task">
                                         <span class="right_bottom_time"><?= date("m-d", strtotime($task_recent['datetime'])) . '（' . $week[date("w", strtotime($task_recent['datetime']))] . '）' ?></span>
 
-                                        <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= htmlspecialchars($task_recent['task_name'],ENT_QUOTES | ENT_HTML5); ?></a>
+                                        <a href="modify_task.php?task_id=<?= $task_recent['id'] ?>" class="task_name"><?= htmlspecialchars($task_recent['task_name'], ENT_QUOTES | ENT_HTML5); ?></a>
                                     </div>
                                     <hr>
                                 <?php endwhile; ?>
@@ -208,7 +305,7 @@ $tasks_recent->execute(array($loginmember['id']));
     </section>
 
 
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="copyright">
                 <span>© 2021 All Rights Reserved.</span>

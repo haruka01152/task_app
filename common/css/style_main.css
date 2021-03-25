@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .error {
@@ -28,8 +28,8 @@ header {
   background: #dacbb5;
   position: relative;
   z-index: 10;
-  -webkit-box-shadow: 3px 3px 10px #b9b1a7;
-          box-shadow: 3px 3px 10px #b9b1a7;
+  -webkit-box-shadow: 3px 3px 10px #bebdbb;
+          box-shadow: 3px 3px 10px #bebdbb;
 }
 
 header .container {
@@ -73,6 +73,7 @@ header .container .logout_button {
   background: rgba(255, 255, 255, 0.705);
   text-align: center;
   margin-right: 20px;
+  margin-left: auto;
 }
 
 header .container .logout_button a {

@@ -11,52 +11,5 @@ session_destroy();
 
 setcookie('email', '', time() - 3600);
 
-?>
-
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../common/css/reset.css">
-    <link rel="stylesheet" href="../common/css/style.css">
-    <title>ログアウト | タスク管理</title>
-</head>
-
-<body>
-
-    <header>
-        <div class="container">
-        </div>
-    </header>
-
-
-    <section class="main">
-        <div class="container">
-            <div class="inputarea">
-                <div class="inputarea_title">
-                    <span>ログアウト</span>
-                </div>
-
-                <div class="logout_message">
-                    <p>ログアウトしました。</p><br><br>
-                    <a href="../index.php">ログイン画面へ</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="container">
-            <div class="copyright">
-                <span>© 2021 All Rights Reserved.</span>
-            </div>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+header('Location: logout_done.html');
+exit();

@@ -32,7 +32,7 @@ header {
     background: rgb(218, 203, 181);
     position:relative;
     z-index:10;
-    box-shadow: 3px 3px 10px rgb(185, 177, 167);
+    box-shadow: 3px 3px 10px rgb(190, 189, 187);
 
     .container {
         height: 80px;
@@ -66,6 +66,7 @@ header {
             background: rgba(255, 255, 255, 0.705);
             text-align: center;
             margin-right: 20px;
+            margin-left: auto;
 
             a {
                 display: inline-block;
